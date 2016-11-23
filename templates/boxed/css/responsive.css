@@ -1,0 +1,24 @@
+@media (max-width:768px){
+	#layout header, .my_logobox, #main_menu, .my_topbar, .my_topbar .topbar_left{
+		float:none!important
+	}
+	.my_topbar,#layout nav#main_menu{display:inline-block}
+	#layout .my_topbar .topbar_left{width:100%}
+	.my_logobox .topbar_banner{display:none}
+	#layout nav .menu{display:block}
+	#layout .my_logobox .my_logo a img{margin:auto}
+}
+
+@media (max-width:960px){
+	.widget_content_slider .items .item .title{
+		display:none
+	}
+	.widget_content_slider .slide{width:90%}
+	.widget_content_slider .items{width:8%}
+	.widget_content_slider .items .item .image{margin:0}
+	.content_list.tiled .tile{width:49%}
+	.content_list.tiled .tile:nth-child(even){padding-right:0}
+	#controller_wrap .photo_filter{padding:0 10px;position: relative;}
+	#controller_wrap .photo_filter .box_menu{margin-right:20px}
+	#controller_wrap .photo_filter .clear_filter{position: absolute;margin-right: 0;right: -15px;border-radius: 0;height: 100%;line-height: 50px;background: red;}
+}
