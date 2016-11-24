@@ -1,14 +1,3 @@
-@media (max-width:768px){
-	#layout header, .my_logobox, #main_menu, .my_topbar, .my_topbar .topbar_left{
-		float:none!important
-	}
-	.my_topbar,#layout nav#main_menu{display:inline-block}
-	#layout .my_topbar .topbar_left{width:100%}
-	.my_logobox .topbar_banner{display:none}
-	#layout nav .menu{display:block}
-	#layout .my_logobox .my_logo a img{margin:auto}
-}
-
 @media (max-width:960px){
 	.widget_content_slider .items .item .title{
 		display:none
@@ -22,3 +11,37 @@
 	#controller_wrap .photo_filter .box_menu{margin-right:20px}
 	#controller_wrap .photo_filter .clear_filter{position: absolute;margin-right: 0;right: -15px;border-radius: 0;height: 100%;line-height: 50px;background: red;}
 }
+
+@media (max-width:860px){
+	#layout header, .my_logobox, #main_menu, .my_topbar, .my_topbar .topbar_left{
+		float:none!important
+	}
+	.my_topbar,#layout nav#main_menu{display:inline-block}
+	#layout .my_topbar .topbar_left,#layout .my_topbar .topbar_right{width:100%}
+	#layout nav .menu{display:block}
+}
+
+@media (max-width:768px){
+	.my_logobox .topbar_banner{display:none}
+	#layout .my_logobox .my_logo{width:100%}
+	#layout .my_logobox .my_logo a img{margin:auto}
+	.widget_user_avatar .menu li ul{
+        visibility: visible !important;
+        position: static !important;
+        width: 90% !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+        display: none;
+        padding-left: 15px !important;
+    }
+
+    .widget_user_avatar .menu li ul li{
+        border-bottom: none !important;
+    }
+
+    .widget_user_avatar .menu .folder:hover,.widget_user_avatar .menu li ul li:hover{
+        background: transparent !important;
+    }
+}
+

@@ -1,4 +1,9 @@
-html{font-size:10px}
+html{
+	font-size:10px;
+	line-height: 1.15;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
 html,
 body {
 	position: relative;
@@ -15,6 +20,15 @@ ul{margin:0;padding:0}
 img {
 	height: auto;
 	max-width: 100%;
+}
+
+a {
+  -webkit-text-decoration-skip: objects
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
 }
 
 #layout, #layout header, .my_logobox, #main_menu, .my_topbar, footer, .my_columns{
@@ -65,7 +79,7 @@ img {
 }
 main{padding:0 15px}
 #main_content *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
-#main_content textarea,#main_content input,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 header .my_topbar .menu,
 .my_socialicons,
 .topbar_search_button{
@@ -156,6 +170,8 @@ header .my_topbar .menu > li > a{display:block;height: 50px;line-height: 50px;pa
 	background:none;
 	color:#fff;
 	padding:0 60px 0 100px;
+	-webkit-appearance: textfield;
+	outline-offset: -2px
 }
 .topbar_search_form fieldset:after{
 	content:'\f002';
@@ -222,6 +238,22 @@ nav select { display: none; }
 aside{padding:15px;border-left: 1px solid #eee;margin-left: -1px;}
 
 .topbar_left .menu ul li a:hover{color:#eee}
+#widget_pos_left-top .widget .menu {margin:-16px -15px -21px}
+#widget_pos_left-top .menu {
+    margin: 0 -15px 10px;
+    padding: 15px 15px 10px;
+    background: #f5f4f4;
+    display: inline-block;
+    width: 100%;
+}
+#widget_pos_left-top .menu li{float: left;margin: 0 5px 5px 0;}
+#widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup, #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup li, #widget_pos_left-top .menu li.flexMenu-viewMore li{float: none;margin:0;}
+#widget_pos_left-top .menu li.flexMenu-viewMore > a{padding:10px;}
+#widget_pos_left-top .menu li.flexMenu-viewMore ul.flexMenu-popup{right:0;white-space:nowrap}
+#widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup ul.flexMenu-popup{left:0;right:0}
+#widget_pos_left-top .menu li a{
+padding:10px 10px 10px 36px
+}
 
 #layout footer{
 	background:#272727;
