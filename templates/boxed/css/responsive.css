@@ -6,14 +6,13 @@
 	.widget_content_slider .items{width:8%}
 	.widget_content_slider .items .item .image{margin:0}
 	.content_list.tiled .tile{width:49%}
-	.content_list.tiled .tile:nth-child(even){padding-right:0}
 	#controller_wrap .photo_filter{padding:0 10px;position: relative;}
 	#controller_wrap .photo_filter .box_menu{margin-right:20px}
 	#controller_wrap .photo_filter .clear_filter{position: absolute;margin-right: 0;right: -15px;border-radius: 0;height: 100%;line-height: 50px;background: red;}
 }
 
 @media (max-width:860px){
-	#layout header, .my_logobox, #main_menu, .my_topbar, .my_topbar .topbar_left{
+	#layout header, .my_logobox, .my_topbar, .my_topbar .topbar_left{
 		float:none!important
 	}
 	.my_topbar,#layout nav#main_menu{display:inline-block}
@@ -21,11 +20,21 @@
 	#layout nav .menu{display:block}
 }
 
+@media (min-width:768px) AND (max-width:860px){
+	#controller_wrap .photo_filter{height:auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;}
+	#controller_wrap .photo_filter form{width:100%}
+	#controller_wrap .photo_filter .box_menu{width: 43%}
+	#controller_wrap .photo_filter .box_menu:nth-of-type(even){padding-left:10px;border-left: 1px solid #ccc;}
+	.box_menu_dd{margin-left:20px}
+	.box_menu_dd:nth-of-type(even){margin-left:30px}
+	.box_menu_dd:nth-of-type(3),.box_menu_dd:last-child{top:90px}
+}
+
 @media (max-width:768px){
 	.my_logobox .topbar_banner{display:none}
 	#layout .my_logobox .my_logo{width:100%}
 	#layout .my_logobox .my_logo a img{margin:auto}
-	.widget_user_avatar .menu li ul{
+	main .widget_user_avatar .menu li ul{
         visibility: visible !important;
         position: static !important;
         width: 90% !important;
@@ -36,12 +45,26 @@
         padding-left: 15px !important;
     }
 
-    .widget_user_avatar .menu li ul li{
+    main .widget_user_avatar .menu li ul li{
         border-bottom: none !important;
     }
 
-    .widget_user_avatar .menu .folder:hover,.widget_user_avatar .menu li ul li:hover{
+    main .widget_user_avatar .menu .folder:hover,.widget_user_avatar .menu li ul li:hover{
         background: transparent !important;
     }
 }
+@media (max-width:640px){
+	#controller_wrap .photo_filter{height:auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;}
+	#controller_wrap .photo_filter form{width:100%}
+	#controller_wrap .photo_filter .box_menu{width: 43%}
+	#controller_wrap .photo_filter .box_menu:nth-of-type(even){padding-left:10px;border-left: 1px solid #ccc;}
+	.box_menu_dd{margin-left:20px}
+	.box_menu_dd:nth-of-type(even){margin-left:30px}
+	.box_menu_dd:nth-of-type(3),.box_menu_dd:last-child{top:90px}
+}
 
+@media (max-width:480px){
+	body h1{font-size:2.2rem}
+	.content_list.tiled .tile{float:none;width:100%}
+	.content_list.tiled .tile .photo{height:250px}
+}

@@ -68,7 +68,7 @@ a:hover {
 	text-align:right;
 	color: #fff;
 }
-.my_logobox .my_logo a{min-height:60px;display:flex;align-items:center}
+.my_logobox .my_logo a{min-height:60px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;align-items:center;}
 .my_logobox .my_logo a img{margin:auto 0}
 .my_logobox .topbar_banner{
 	width:auto;
@@ -230,7 +230,8 @@ nav#main_menu .menu li:last-child > ul li.folder > a:after{
     content: "\f0d9";
 }
 nav#main_menu{margin-bottom:0}
-nav select { display: none; }
+nav select, .tabs-menu select{display:none !important}
+.tabs-menu ul{display:block}
 
 #top_position{clear:both}
 
@@ -247,13 +248,29 @@ aside{padding:15px;border-left: 1px solid #eee;margin-left: -1px;}
     width: 100%;
 }
 #widget_pos_left-top .menu li{float: left;margin: 0 5px 5px 0;}
-#widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup, #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup li, #widget_pos_left-top .menu li.flexMenu-viewMore li{float: none;margin:0;}
+#widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup, #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup li, #widget_pos_left-top .menu li.flexMenu-viewMore li,.tabs-menu ul li.flexMenu-viewMore li{float: none;margin:0;}
 #widget_pos_left-top .menu li.flexMenu-viewMore > a{padding:10px;}
-#widget_pos_left-top .menu li.flexMenu-viewMore ul.flexMenu-popup{right:0;white-space:nowrap}
+#widget_pos_left-top .menu li.flexMenu-viewMore ul.flexMenu-popup,.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{right:0;white-space:nowrap}
 #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup ul.flexMenu-popup{left:0;right:0}
-#widget_pos_left-top .menu li a{
-padding:10px 10px 10px 36px
+#widget_pos_left-top .menu li a{padding:10px 10px 10px 36px}
+.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{border: 1px solid #b3c2c9;margin-top:2px;border-top:none;border-bottom:none}
+.tabs-menu ul.tabbed li.flexMenu-viewMore.active li a{
+    border: none;
+    min-width: 100px;
+    display: block;
+    padding: 4px 10px;
+    border-bottom: 1px solid #b3c2c9;
+	margin:0
 }
+.tabs-menu ul.tabbed li.flexMenu-viewMore.active li.folder{position:relative}
+.tabs-menu li.flexMenu-viewMore.active li.folder > ul{
+    right: 100%;
+    top: 0;
+	border-bottom:none
+}
+.tabs-menu li.flexMenu-viewMore.active li.folder > ul li a{width:auto}
+.tabs-menu li.flexMenu-viewMore.active li.folder > ul li a:hover{border-bottom: 1px solid #b3c2c9 !important}
+
 
 #layout footer{
 	background:#272727;
@@ -507,6 +524,11 @@ main section .menu li:hover .counter{
 .widget_user_avatar .menu{border-top:none}
 aside .widget > .title{height:47px;line-height:47px}
 .widget_content_slider .items .item .image{width:32px}
+.tabs-menu .tabbed li a{display:inline;padding:10px}
+#group_profile .block .details, #group_profile .block .details li{margin:5px 0}
+.pagebar_nav .pagebar_page{padding:6px 10px 6px 12px;background:#34495e;color:#fff}
+.pagebar_nav .pagebar_page.disabled{background:#ccc;color:#fff}
+#user_profile_title .status{margin-top:3px}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
