@@ -18,6 +18,7 @@
 	.my_topbar,#layout nav#main_menu{display:inline-block}
 	#layout .my_topbar .topbar_left,#layout .my_topbar .topbar_right{width:100%}
 	#layout nav .menu{display:block}
+	.topbar_search .topbar_search_close,.topbar_search .topbar_search_form fieldset input[type="search"],.topbar_search .topbar_search_form fieldset:after{height:100px;line-height:100px}
 }
 
 @media (min-width:768px) AND (max-width:860px){
@@ -54,17 +55,104 @@
     }
 }
 @media (max-width:640px){
-	#controller_wrap .photo_filter{height:auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;}
+	#controller_wrap .photo_filter{height:auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;overflow:visible}
 	#controller_wrap .photo_filter form{width:100%}
-	#controller_wrap .photo_filter .box_menu{width: 43%}
+	#controller_wrap .photo_filter .box_menu{width: 43%;display: inline-block;border: none;}
 	#controller_wrap .photo_filter .box_menu:nth-of-type(even){padding-left:10px;border-left: 1px solid #ccc;}
-	.box_menu_dd{margin-left:20px}
+	.photo_filter .box_menu_dd{margin-left:20px;position:absolute}
 	.box_menu_dd:nth-of-type(even){margin-left:30px}
 	.box_menu_dd:nth-of-type(3),.box_menu_dd:last-child{top:90px}
 }
 
 @media (max-width:480px){
+	#layout nav#main_menu,header .my_topbar .my_socialicons,.widget_activity_list .item .details .date,.widget_comments_list .item .date,.widget_content_slider .slide .heading .teaser{display:none}
 	body h1{font-size:2.2rem}
-	.content_list.tiled .tile{float:none;width:100%}
+	.content_list.tiled .tile{float:none;width:100%;padding:0}
 	.content_list.tiled .tile .photo{height:250px}
+	.pagebar_nav .pagebar_page{padding:6px 10px 6px 12px;background:#34495e;color:#fff}
+	.pagebar_nav .pagebar_page.disabled{background:#ccc;color:#fff}
+	header .my_topbar .topbar_right .menu,header .widget_user_avatar{float:left;z-index:5}
+	header .widget_user_avatar .menu{text-align:left;left:0}
+	.content_list.tiled .tile .photo{height:180px}
+	#controller_wrap .photo_filter .box_menu{width: 95%;margin: 0;padding: 0 !important;border: none !important;}
+	.photo_filter .box_menu_dd{top:auto}
+	#controller_wrap .spoil .sp_button{width:16px}
+	#layout header .widget_user_avatar .menu li ul{right: auto;left: 150px;}
+	a.menu_mobile {
+	  color: #fff;
+	  display: block !important;
+	  text-decoration: none;
+	  padding: 12px;
+	  font-size: 20px;
+	}
+	
+#layout #main_menu, #layout #menu_mobile > ul, #layout #menu_mobile > ul ul {
+  clear: both;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+#layout #menu_mobile.is_mm_open {
+  margin: 0;
+  max-height: 100%;
+  width: 100vw;
+  display: block !important;
+}
+
+#layout #menu_mobile > ul ul.is_mi_open {
+  margin: 0;
+  max-height: 55em;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  visibility: visible;
+  background:rgba(0, 0, 0, 0.25);
+  left:0
+}
+
+#layout #menu_mobile ul ul.is_mi_open ul{background: rgba(0, 0, 0, 0.15);}
+
+#layout #menu_mobile > ul {padding: 0;height: auto;line-height: normal;float: none;}
+
+#layout nav#menu_mobile li {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  float: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+#layout #menu_mobile li a {
+  display: inline-block;
+  font-size: 1.04em;
+  letter-spacing: .05em;
+  line-height: 2.5em;
+  text-decoration: none;
+}
+
+#layout #menu_mobile,#layout #menu_mobile > ul ul {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#layout #menu_mobile li a {
+  display: block;
+  padding: 8px 0 6px 15px !important;
+  color:#ddd !important;
+}
+
+#layout #menu_mobile .menu > li.active > a {background: rgba(0, 0, 0, 0.42) !important;color:#fff !important;}
+#layout #menu_mobile li li a {padding-left: 25px !important;}
+#layout #menu_mobile li li li a {padding-left: 30px !important;}
+
+#layout #menu_mobile .menu > .folder > a > .wrap:after{float:right;margin: -6px 10px;padding:13px;}
+#layout #menu_mobile .menu ul .folder > a:after{content:"\f0d7";float:right;margin:-6px 16px;padding:13px}
+}
+
+@media (max-width:360px){
+	input.button.button-cancel{margin-top:5px}
 }

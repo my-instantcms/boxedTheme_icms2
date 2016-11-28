@@ -55,16 +55,8 @@
 				<?php } ?>
 				<div class="topbar_right"<?php if(!$this->hasWidgetsOn('topbar_left')) { ?> style="width:100%"<?php } ?>>
 					<?php $this->widgets('topbar_right', false, 'wrapper_plain'); ?>
-					<a class="topbar_search_button" href="javascript:void(0);"><i class="fa fa-search"></i></a>
 				</div>
-				<div class="topbar_search">
-					<form action="<?php echo href_to('search'); ?>" method="get" class="topbar_search_form">
-						<fieldset>
-							<input type="search" name="q" class="form-control" placeholder="Что ищем?">
-						</fieldset>
-					</form>
-					<a class="topbar_search_close" href="javascript:void(0);"><i class="fa fa-close"></i></a>
-				</div>
+				
 			</div>
 			<div class="my_logobox">
 				<div class="row">
@@ -86,6 +78,7 @@
 				<nav id="main_menu">
 					<?php $this->widgets('main_menu', false, 'wrapper_plain'); ?>
 				</nav>
+				<?php $this->widgets('main_menu', false, 'menu_mobile'); ?>
 			<?php } ?>
 		</header>
 		

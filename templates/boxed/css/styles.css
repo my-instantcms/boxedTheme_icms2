@@ -114,7 +114,7 @@ header .my_topbar .menu li ul{
     z-index:4;
     text-align: left;
 }
-header .my_topbar .menu ul li{
+header .my_topbar .menu ul li,#layout #menu_mobile.is_mm_open{
     background: #464646;
 }
 header .my_topbar .menu ul li a{background-image:none !important}
@@ -134,7 +134,7 @@ header .my_topbar .menu > li > a{display:block;height: 50px;line-height: 50px;pa
 	font-size: 16px;
 	line-height:48px;
 }
-.topbar_search{
+.topbar_right .topbar_search{
 	top:0;
 	left:0;
 	z-index:10;
@@ -253,7 +253,7 @@ aside{padding:15px;border-left: 1px solid #eee;margin-left: -1px;}
 #widget_pos_left-top .menu li.flexMenu-viewMore ul.flexMenu-popup,.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{right:0;white-space:nowrap}
 #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup ul.flexMenu-popup{left:0;right:0}
 #widget_pos_left-top .menu li a{padding:10px 10px 10px 36px}
-.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{border: 1px solid #b3c2c9;margin-top:2px;border-top:none;border-bottom:none}
+.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{border: 1px solid #b3c2c9;margin-top:2px;border-top:none;border-bottom:none;z-index:2}
 .tabs-menu ul.tabbed li.flexMenu-viewMore.active li a{
     border: none;
     min-width: 100px;
@@ -525,10 +525,10 @@ main section .menu li:hover .counter{
 aside .widget > .title{height:47px;line-height:47px}
 .widget_content_slider .items .item .image{width:32px}
 .tabs-menu .tabbed li a{display:inline;padding:10px}
+.tabs-menu .tabbed li a:hover{padding:10px 10px 9px}
 #group_profile .block .details, #group_profile .block .details li{margin:5px 0}
-.pagebar_nav .pagebar_page{padding:6px 10px 6px 12px;background:#34495e;color:#fff}
-.pagebar_nav .pagebar_page.disabled{background:#ccc;color:#fff}
 #user_profile_title .status{margin-top:3px}
+.show-more{line-height:24px}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
@@ -554,6 +554,7 @@ aside .widget > .title{height:47px;line-height:47px}
 #layout .days .full,#layout #arrow_schedule{margin-bottom:0}
 #layout .schedule .date td select{height:auto}
 #layout .day_list{width:360px}
+.wd_app_calendar .ui-datepicker{width:100%;box-shadow:none}
 
 /*********************** FONT SIZES rem ******************/
 

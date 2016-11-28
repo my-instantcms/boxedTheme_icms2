@@ -6,8 +6,8 @@
 		<a class="fontzoomin" title="Увеличить шрифт"><i class="fa fa-plus"></i></a>
 	</div>
 	<div class="vi_backgrounds">
-		<a class="set_black" title="Темный фон"><i class="fa fa-adjust"></i></a>
-		<a class="set_white" title="Светлый фон"><i class="fa fa-adjust"></i></a>
+		<a class="set_black" title="Темный фон"><i class="fa fa-adjust"></i></a> 
+		<a class="set_white" title="Светлый фон"><i class="fa fa-adjust"></i></a> 
 		<a class="set_reset" title="Фон по умолчанию"><i class="fa fa-close"></i></a>
 	</div>
 	<div class="vi_images">

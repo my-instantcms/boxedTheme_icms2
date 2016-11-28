@@ -28,5 +28,34 @@ $(document).ready(function() {
 	$(".footer_top").on("click", function(){$(".footer_top span").toggle();});
 	
 	$('#main_menu ul.menu, #widget_pos_left-top .menu, .tabs-menu > ul').flexMenu({'cutoff' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="fa fa-bars"></i> &nbsp; Меню действий'});
+	$('header .my_topbar .topbar_left > .menu, header .my_topbar .topbar_right > .menu').flexMenu({'cutoff' : 1, 'threshold' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="fa fa-bars"></i>'});
 
+});
+
+$(function() {
+
+	var	$menu = $('#menu_mobile'),
+		$menulink = $('.menu_mobile'),
+		$menuTrigger = $('#menu_mobile .menu .folder > a');
+	
+	$menuTrigger.attr('href','javascript:;');
+
+	$menulink.click(function(e) {
+		e.preventDefault();
+		$menulink.toggleClass('is_mm');
+		$menu.toggleClass('is_mm_open');
+	});
+
+	$menuTrigger.click(function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		$this.next('ul').toggleClass('is_mi_open');
+	});
+
+});
+
+$(window).resize(function() {
+		if ($(window).width() > 480) {
+			$("#menu_mobile").removeClass("is_mm");
+		}
 });
