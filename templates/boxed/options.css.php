@@ -53,6 +53,7 @@ footer .footer_top,
 nav#main_menu .menu ul li,
 footer .widget .title::before,
 #layout .widget > .title .links a,
+#layout .widget_tabbed > .tabs .links a,
 .widget_content_slider .items .item.active,
 a.menu_mobile
 {background:<?php echo $color; ?>}

@@ -19,6 +19,7 @@
 	#layout .my_topbar .topbar_left,#layout .my_topbar .topbar_right{width:100%}
 	#layout nav .menu{display:block}
 	.topbar_search .topbar_search_close,.topbar_search .topbar_search_form fieldset input[type="search"],.topbar_search .topbar_search_form fieldset:after{height:100px;line-height:100px}
+	html #layout{margin-top:0 !important}
 }
 
 @media (min-width:768px) AND (max-width:860px){

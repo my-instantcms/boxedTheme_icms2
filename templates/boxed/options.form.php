@@ -14,7 +14,7 @@ class formBoxedTemplateOptions extends cmsForm {
                 'childs' => array(
 				
 					new fieldColor('color', array(
-                        'title' => 'Цветовая схема',
+                        'title' => LANG_THEME_COLOR,
                         'default' => '#20b2aa'
                     )),
 				
@@ -32,7 +32,7 @@ class formBoxedTemplateOptions extends cmsForm {
                     )),
 					
 					new fieldCheckbox('bg_img_fix', array(
-                        'title' => 'Фиксировать фоновую картинку (не будет прокручиваться)'
+                        'title' => LANG_THEME_BG_FIX
                     )),
 					
 					new fieldList('bg_repeat', array(
@@ -43,27 +43,27 @@ class formBoxedTemplateOptions extends cmsForm {
                             'no-repeat' => LANG_THEME_BG_REPEAT_NO,
                             'repeat-x' => LANG_THEME_BG_REPEAT_X,
                             'repeat-y' => LANG_THEME_BG_REPEAT_Y,
-                            'cover' => 'Растянуть на весь экран',
+                            'cover' => LANG_THEME_COVER,
                         )
                     )),
 					
 					new fieldList('bg_img_pos_x', array(
-                        'title' => 'Горизонтальное положение фона',
+                        'title' => LANG_THEME_BG_POSX,
                         'default' => 'left',
                         'items' => array(
-                            'center' => 'По центру',
-                            'left' => 'Налево',
-                            'right' => 'Направо',
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'left' => LANG_THEME_BG_POS_X_LEFT,
+                            'right' => LANG_THEME_BG_POS_X_RIGHT,
                         )
                     )),
 
 					new fieldList('bg_img_pos_y', array(
-                        'title' => 'Вертикальное положение фона',
+                        'title' => LANG_THEME_BG_POSY,
                         'default' => 'top',
                         'items' => array(
-                            'center' => 'По центру',
-                            'top' => 'Сверху',
-                            'bottom' => 'Снизу'
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'top' => LANG_THEME_BG_POS_Y_TOP,
+                            'bottom' => LANG_THEME_BG_POS_Y_BOTTOM
                         )
                     )),
 
@@ -72,11 +72,11 @@ class formBoxedTemplateOptions extends cmsForm {
 
             array(
                 'type' => 'fieldset',
-                'title' => 'Шапка',
+                'title' => LANG_THEME_HEAD,
                 'childs' => array(
 
                     new fieldImage('logo', array(
-						'title' => 'Логотип',
+						'title' => LANG_THEME_LOGO,
                         'options' => array(
                             'sizes' => array('small', 'original'),
 							'allow_import_link' => true
@@ -84,16 +84,16 @@ class formBoxedTemplateOptions extends cmsForm {
                     )),
 					
 					new fieldColor('headbgcolor', array(
-                        'title' => 'Цвет фона шапки',
+                        'title' => LANG_THEME_HEAD_COLOR,
                         'default' => '#fff'
                     )),
 
 					new fieldCheckbox('hidebgimg', array(
-                        'title' => 'Убрать прозрачную картинку из фона шапки'
+                        'title' => LANG_THEME_HIDE_IMG
                     )),
 
 					new fieldImage('headbg', array(
-						'title' => 'Фоновое изображение шапки',
+						'title' => LANG_THEME_HEAD_BG,
                         'options' => array(
                             'sizes' => array('small', 'original'),
 							'allow_import_link' => true
@@ -108,32 +108,32 @@ class formBoxedTemplateOptions extends cmsForm {
                             'no-repeat' => LANG_THEME_BG_REPEAT_NO,
                             'repeat-x' => LANG_THEME_BG_REPEAT_X,
                             'repeat-y' => LANG_THEME_BG_REPEAT_Y,
-							'cover' => 'Растянуть на весь экран',
+							'cover' => LANG_THEME_COVER,
                         )
                     )),
 					
 					new fieldList('headbg_img_pos_x', array(
-                        'title' => 'Горизонтальное положение фона',
+                        'title' => LANG_THEME_BG_POSX,
                         'default' => 'left',
                         'items' => array(
-                            'center' => 'По центру',
-                            'left' => 'Налево',
-                            'right' => 'Направо',
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'left' => LANG_THEME_BG_POS_X_LEFT,
+                            'right' => LANG_THEME_BG_POS_X_RIGHT,
                         )
                     )),
 
 					new fieldList('headbg_img_pos_y', array(
-                        'title' => 'Вертикальное положение фона',
+                        'title' => LANG_THEME_BG_POSY,
                         'default' => 'top',
                         'items' => array(
-                            'center' => 'По центру',
-                            'top' => 'Сверху',
-                            'bottom' => 'Снизу'
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'top' => LANG_THEME_BG_POS_Y_TOP,
+                            'bottom' => LANG_THEME_BG_POS_Y_BOTTOM
                         )
                     )),
 					
 					new fieldNumber('headpadding', array(
-                        'title' => 'Отступ по верх и вниз шапки',
+                        'title' => LANG_THEME_HEAD_PADDING,
 						'default' => 55,
 						'units' => 'px'
                     )),					
@@ -142,11 +142,11 @@ class formBoxedTemplateOptions extends cmsForm {
 
             array(
                 'type' => 'fieldset',
-                'title' => 'Падвал',
+                'title' => LANG_THEME_FOOTER,
                 'childs' => array(
 				
 					new fieldImage('footerbg', array(
-						'title' => 'Фон блока с виджетами',
+						'title' => LANG_THEME_FOOTER_BG,
                         'options' => array(
                             'sizes' => array('small', 'original'),
 							'allow_import_link' => true
@@ -154,22 +154,22 @@ class formBoxedTemplateOptions extends cmsForm {
                     )),
 					
 					new fieldList('footerbg_img_pos_x', array(
-                        'title' => 'Горизонтальное положение фона',
+                        'title' => LANG_THEME_BG_POSX,
                         'default' => 'left',
                         'items' => array(
-                            'center' => 'По центру',
-                            'left' => 'Налево',
-                            'right' => 'Направо',
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'left' => LANG_THEME_BG_POS_X_LEFT,
+                            'right' => LANG_THEME_BG_POS_X_RIGHT
                         )
                     )),
 
 					new fieldList('footerbg_img_pos_y', array(
-                        'title' => 'Вертикальное положение фона',
+                        'title' => LANG_THEME_BG_POSY,
                         'default' => 'top',
                         'items' => array(
-                            'center' => 'По центру',
-                            'top' => 'Сверху',
-                            'bottom' => 'Снизу'
+                            'center' => LANG_THEME_BG_POS_X_CENTER,
+                            'top' => LANG_THEME_BG_POS_Y_TOP,
+                            'bottom' => LANG_THEME_BG_POS_Y_BOTTOM
                         )
                     )),
 
@@ -188,11 +188,11 @@ class formBoxedTemplateOptions extends cmsForm {
                     )),
 					
 					new fieldString('hide_text', array(
-                        'title' => 'Скрытый текст'
+                        'title' => LANG_THEME_HIDE_TEXT
                     )),
 					
 					new fieldText('counters', array(
-                        'title' => 'Счетчики или любой HTML код'
+                        'title' => LANG_THEME_HTML
                     )),
 
                 )

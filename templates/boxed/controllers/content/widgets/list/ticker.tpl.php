@@ -13,6 +13,6 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<style>.newsticker>i.fa{font-size:24px;width:50px;height:50px;line-height:54px;text-align:center;float:left;color:#fff;margin:0 15px 0 0;background:#272727}.newsticker>i.fa:after{content:" ";border:7px solid transparent;border-left-color:#272727;position:absolute;left:50px;top:19px}.newsticker ul{overflow:hidden;height:50px;display:inline-block}.newsticker ul li{height:50px;line-height:50px}.newsticker ul li a{text-decoration:none}.newsticker ul li a:hover{text-decoration:underline}</style>
+<style>.newsticker{white-space:nowrap}.newsticker>i.fa{font-size:24px;width:50px;height:50px;line-height:54px;text-align:center;float:left;color:#fff;margin:0 15px 0 0;background:#272727}.newsticker>i.fa:after{content:" ";border:7px solid transparent;border-left-color:#272727;position:absolute;left:50px;top:19px}.newsticker ul{overflow:hidden;height:50px;display:block}.newsticker ul li{height:50px;line-height:50px}.newsticker ul li a{text-decoration:none}.newsticker ul li a:hover{text-decoration:underline}</style>
 	<script>$(function(){$('#nt_<?php html($widget->id); ?>.newsticker').newsticker();});</script>	
 <?php } ?>
