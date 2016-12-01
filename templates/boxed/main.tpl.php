@@ -5,6 +5,7 @@
 	} else {
 		$logo = '/templates/default/images/logo.png';
 	}
+	$left_sidebar = (isset($this->options['aside_pos']) && $this->options['aside_pos'] == 'left') ? 'is_sidebar_left' : false;
 ?>
 <!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/ article: http://ogp.me/ns/article#  profile: http://ogp.me/ns/profile#">
@@ -36,9 +37,10 @@
     <![endif]-->
     <?php $this->head(); ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
     <style><?php include('options.css.php'); ?></style>
 </head>
-<body id="<?php echo $device_type; ?>_device_type">
+<body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?>">
 
     <div id="layout">
 
@@ -102,6 +104,15 @@
 		
 		<main>
 			<div class="row" style="background:#f9f9f9">
+			
+				<?php if ($is_sidebar && $left_sidebar) { ?>
+					<aside class="col-sm-4">
+						<div id="widget_pos_right-top"><?php $this->widgets('right-top'); ?></div>
+						<div id="widget_pos_right-center"><?php $this->widgets('right-center'); ?></div>
+						<div id="widget_pos_right-bottom"><?php $this->widgets('right-bottom'); ?></div>
+					</aside>
+				<?php } ?>
+			
 				<section class="<?php html($section_class); ?>" id="main_content">
 				
 					<?php
@@ -133,7 +144,7 @@
 
 				</section>
 				
-				<?php if($is_sidebar){ ?>
+				<?php if($is_sidebar && !$left_sidebar){ ?>
 					<aside class="col-sm-4">
 						<div id="widget_pos_right-top"><?php $this->widgets('right-top'); ?></div>
 						<div id="widget_pos_right-center"><?php $this->widgets('right-center'); ?></div>

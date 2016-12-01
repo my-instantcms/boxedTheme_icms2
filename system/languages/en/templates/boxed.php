@@ -22,6 +22,7 @@
     define('LANG_THEME_BG_POS_Y_TOP',     'Top');
     define('LANG_THEME_BG_POS_Y_CENTER',  'Center');
     define('LANG_THEME_BG_POS_Y_BOTTOM',  'Bottom');
+	define('LANG_THEME_LAYOUT_SIDEBAR_POS', 'Sidebar position');
 
     define('LANG_THEME_TOP_MARGIN',       'Page top margin');
     define('LANG_THEME_COLOR',       	  'Color scheme');

@@ -62,7 +62,7 @@ class formTemplateProfileOptions extends cmsForm {
                     )),
 					
 					new fieldNumber('margin_top', array(
-						'title' => LANG_THEME_BG_POS,
+						'title' => LANG_THEME_TOP_MARGIN,
                         'default' => 0,
                         'rules' => array(
                            array('min', 0),

@@ -66,6 +66,15 @@ class formBoxedTemplateOptions extends cmsForm {
                             'bottom' => LANG_THEME_BG_POS_Y_BOTTOM
                         )
                     )),
+					
+					new fieldList('aside_pos', array(
+                        'title' => LANG_THEME_LAYOUT_SIDEBAR_POS,
+                        'default' => 'right',
+                        'items' => array(
+                            'left' => LANG_THEME_BG_POS_X_LEFT,
+                            'right' => LANG_THEME_BG_POS_X_RIGHT,
+                        )
+                    )),
 
                 )
             ),

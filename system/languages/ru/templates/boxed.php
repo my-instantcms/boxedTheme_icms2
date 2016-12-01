@@ -22,6 +22,7 @@
     define('LANG_THEME_BG_POS_Y_TOP',     'Сверху');
     define('LANG_THEME_BG_POS_Y_CENTER',  'По центру');
     define('LANG_THEME_BG_POS_Y_BOTTOM',  'Снизу');
+	define('LANG_THEME_LAYOUT_SIDEBAR_POS', 'Положение боковой колонки');
 
     define('LANG_THEME_TOP_MARGIN',       'Верхний отступ страницы');
     define('LANG_THEME_COLOR',       	  'Цветовая схема');

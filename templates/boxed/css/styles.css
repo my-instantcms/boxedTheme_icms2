@@ -79,7 +79,7 @@ a:hover {
 }
 main{padding:0 15px}
 #main_content *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
-#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 header .my_topbar .menu,
 .my_socialicons,
 .topbar_search_button{
@@ -236,7 +236,10 @@ nav select, .tabs-menu select{display:none !important}
 #top_position{clear:both}
 
 #main_content{border-right: 1px solid #eee;padding:15px;background: #fff;}
+.is_sidebar_left #main_content{border-right:none;border-left: 1px solid #eee}
 aside{padding:15px;border-left: 1px solid #eee;margin-left: -1px;}
+.is_sidebar_left aside{border-left:none;border-right: 1px solid #eee;margin-left:0;margin-right: -1px;}
+.is_sidebar_left main aside .menu li ul{right:auto;left:91%}
 
 .topbar_left .menu ul li a:hover{color:#eee}
 #widget_pos_left-top .widget .menu {margin:-16px -15px -21px}
