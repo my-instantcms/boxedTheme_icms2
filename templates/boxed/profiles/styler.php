@@ -24,11 +24,11 @@
         <?php } ?>
     }
 
-    body #layout{
-        <?php if (!empty($margin_top)){ ?>
+    <?php if (!empty($margin_top)){ ?>
+		body #layout{        
             margin-top: <?php echo $margin_top; ?>px !important;
-        <?php } ?>
-    }
+        }
+    <?php } ?>
 
 </style>
 <?php } ?>

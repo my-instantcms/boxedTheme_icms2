@@ -26,9 +26,9 @@
 		$footerbg = 'none';
 	}
 
- ?>
+?>
  
- body{
+body{
 	background-color: <?php html($bg_color); ?> !important;
 	background-image: <?php echo $bg_img; ?> !important;
 	<?php if ($bg_img != 'none' && isset($this->options['bg_repeat'])) { ?>
@@ -42,7 +42,12 @@
 		background-position-x: <?php html($this->options['bg_img_pos_x']); ?> !important;
 		background-position-y: <?php html($this->options['bg_img_pos_y']); ?> !important;
 	<?php } ?>
- }
+}
+<?php if (!empty($this->options['margin_top'])){ ?>
+	#layout{        
+		margin-top: <?php echo $this->options['margin_top']; ?>px !important;
+	}
+<?php } ?>
  
 .my_topbar .topbar_left,
 #main_menu,
@@ -55,11 +60,12 @@ footer .widget .title::before,
 #layout .widget > .title .links a,
 #layout .widget_tabbed > .tabs .links a,
 .widget_content_slider .items .item.active,
-a.menu_mobile
+a.menu_mobile,
+.topbar_right .wd_notices_icons li .wd_open_block .wd_ob_head
 {background:<?php echo $color; ?>}
 .topbar_right .menu li a:hover
 {color:<?php echo $color; ?>}
-footer .footer_top:before{
+footer .footer_top:before,.topbar_right .wd_notices_icons li .wd_open_block:after{
 	border-bottom-color:<?php echo $color; ?>;
 }
 .my_logobox{

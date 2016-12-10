@@ -39,6 +39,7 @@
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
     <style><?php include('options.css.php'); ?></style>
+    <?php if(!empty($this->options['fix_menu'])){ ?><script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu").removeClass("menu_fix")})});</script><?php } ?>
 </head>
 <body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?>">
 

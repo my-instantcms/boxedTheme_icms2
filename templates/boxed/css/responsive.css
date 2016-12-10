@@ -33,6 +33,7 @@
 }
 
 @media (max-width:768px){
+	header{display:inline-block}
 	.my_logobox .topbar_banner{display:none}
 	#layout .my_logobox .my_logo{width:100%}
 	#layout .my_logobox .my_logo a img{margin:auto}

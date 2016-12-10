@@ -79,7 +79,7 @@ a:hover {
 }
 main{padding:0 15px}
 #main_content *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
-#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *,.nyroModalCont *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 header .my_topbar .menu,
 .my_socialicons,
 .topbar_search_button{
@@ -215,6 +215,8 @@ header .menu > .folder > a > .wrap:after {content: "\f078";font: normal normal n
 header .menu > .folder > ul .folder > a:after,header .menu > .flexMenu-viewMore > ul .folder > a:after{content: "\f0da";font: normal normal normal 14px/1 FontAwesome;margin:13px 0 0;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;float: right;}
 header .menu ul ul{top:-1px}
 nav#main_menu .menu li ul li{background:#464646}
+nav#main_menu.menu_fix{position:fixed;left:0;top:0;z-index: 500;display: flex;}
+nav#main_menu.menu_fix .menu{margin:auto}
 header .menu ul li a{height:40px;line-height:40px}
 header .menu ul li{border-color:rgba(0, 0, 0, 0.14)}
 header .menu > li.active > a{background:rgba(255, 255, 255, 0.24) !important;color:#fff}
@@ -532,6 +534,15 @@ aside .widget > .title{height:47px;line-height:47px}
 #group_profile .block .details, #group_profile .block .details li{margin:5px 0}
 #user_profile_title .status{margin-top:3px}
 .show-more{line-height:24px}
+.nyroModalCont .notice{min-width:160px}
+.title .links a i.fa{display:inline}
+.widget_comments_list .image .default_avatar{line-height: 32px !important;font-size: 20px !important}
+#layout .album-photos-wrap .photo img{width:100%}
+.widget_content_list.featured .item-first {position:relative;width:44%}
+.widget_content_list.featured .item-first .image{height:286px}
+.widget_content_list.featured .item-first .info{position: absolute;bottom: 5px;padding: 10px;left: 0;right: 0;background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.48) 20%, rgba(0,0,0,0.69) 50%, rgba(0,0,0,0.95) 100%);background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.48) 20%,rgba(0,0,0,0.69) 50%,rgba(0,0,0,0.95) 100%);background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.48) 20%,rgba(0,0,0,0.69) 50%,rgba(0,0,0,0.95) 100%);}
+.widget_content_list.featured .item-first .details,.widget_content_list.featured .item-first .details a,.widget_content_list.featured .item-first .title a{color:#fff}
+.widget_content_list.featured .item-first .title{margin:0}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
