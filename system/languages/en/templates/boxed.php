@@ -46,3 +46,6 @@
     define('LANG_BX_THEME_COPYRIGHT_URL_HINT',     'Homepage by default');
     define('LANG_BX_THEME_COPYRIGHT_YEAR',         'Copyright year');
     define('LANG_BX_THEME_COPYRIGHT_YEAR_HINT', 	'Current year by default');
+	
+	define('LANG_BX_THEME_FAVICON', 'Website icon (favicon)');
+    define('LANG_BX_THEME_FAVICON_HINT', 'Its the little icon beside your site');

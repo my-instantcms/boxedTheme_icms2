@@ -76,8 +76,16 @@ class formBoxedTemplateOptions extends cmsForm {
                         )
                     )),
 					
+					new fieldImage('favicon', array(
+						'title' => LANG_BX_THEME_FAVICON,
+						'hint' => LANG_BX_THEME_FAVICON_HINT,
+                        'options' => array(
+                            'sizes' => array('small', 'original')
+                        )
+                    )),
+					
 					new fieldCheckbox('fix_menu', array(
-                        'title' => 'Фиксировать основной меню'
+                        'title' => LANG_BX_THEME_MENU_FIX
                     )),
 					
 					new fieldNumber('margin_top', array(

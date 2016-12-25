@@ -36,7 +36,7 @@
     define('LANG_BX_THEME_HIDE_IMG',         'Убрать прозрачную картинку из фона шапки');
     define('LANG_BX_THEME_HEAD_BG',       	  'Фоновое изображение шапки');
     define('LANG_BX_THEME_HEAD_PADDING',     'Отступ по верх и вниз шапки');
-    define('LANG_BX_THEME_FOOTER',       	  'Падвал');
+    define('LANG_BX_THEME_FOOTER',       	  'Подвал');
     define('LANG_BX_THEME_FOOTER_BG',        'Фон блока с виджетами');
     define('LANG_BX_THEME_HIDE_TEXT',        'Скрытый текст');
     define('LANG_BX_THEME_HTML',       	  'Счетчики или любой HTML код');
@@ -46,3 +46,6 @@
     define('LANG_BX_THEME_COPYRIGHT_URL_HINT',     'Если не указана, ведет на главную страницу');
     define('LANG_BX_THEME_COPYRIGHT_YEAR',         'Год копирайта');
     define('LANG_BX_THEME_COPYRIGHT_YEAR_HINT',    'Если не указан, выводится текущий');
+
+    define('LANG_BX_THEME_FAVICON', 'Значок сайта (favicon)');
+    define('LANG_BX_THEME_FAVICON_HINT', 'Иконка, которая рядом с заголовком отображается в браузерах');

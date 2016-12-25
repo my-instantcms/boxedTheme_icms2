@@ -13,6 +13,10 @@
     <title><?php $this->title(); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php if(isset($this->options['favicon']['original']) && $this->options['favicon']['original']){ ?>
+		<?php $favicon = $config->upload_root . $this->options['favicon']['original']; ?>
+		<link rel="shortcut icon" href="<?php echo $favicon; ?>" type="image/x-icon">
+	<?php } ?>
     <?php
 		$this->addMainCSS("templates/{$this->name}/css/bootstrap.min.css");
 		$this->addMainCSS("templates/{$this->name}/css/font-awesome/css/font-awesome.min.css");
@@ -38,6 +42,7 @@
     <?php $this->head(); ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
+	<link rel="canonical" href="<?php echo $config->host . $core->uri_absolute; ?>" itemprop="url" />
     <style><?php include('options.css.php'); ?></style>
     <?php if(!empty($this->options['fix_menu'])){ ?><script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu").removeClass("menu_fix")})});</script><?php } ?>
 </head>
@@ -56,7 +61,7 @@
 						<?php $this->widgets('topbar_left', false, 'wrapper_plain'); ?>
 					</div>
 				<?php } ?>
-				<div class="topbar_right"<?php if(!$this->hasWidgetsOn('topbar_left')) { ?> style="width:100%"<?php } ?>>
+				<div class="topbar_right<?php if(!$this->hasWidgetsOn('topbar_left')) { ?> not_left_bar<?php } ?>">
 					<?php $this->widgets('topbar_right', false, 'wrapper_plain'); ?>
 				</div>
 				
@@ -67,6 +72,9 @@
 						<a href="<?php echo href_to_home(); ?>">
 							<img src="<?php html($logo); ?>" alt="<?php html($config->sitename); ?>">
 						</a>
+						<?php if(!$core->uri) { ?>
+							<h1 style="display:none"><?php $this->title(); ?></h1>
+						<?php } ?>
 					</div>
 					<div class="col-sm-8">
 						<?php if($this->hasWidgetsOn('topbar_banner')) { ?>

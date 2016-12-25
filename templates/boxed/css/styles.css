@@ -61,6 +61,7 @@ a:hover {
 	padding:0;
 	color: #fff;
 }
+.my_topbar .topbar_right.not_left_bar{width:100%}
 .my_topbar .topbar_right{
 	width:60%;
 	height:50px;
@@ -313,7 +314,7 @@ footer .footer_middle:before {
   display: block;
 }
 .my_columns{padding-bottom:5px}
-footer .widget .title{
+footer .widget > .title{
 	margin:0 0 20px;
 	border-bottom: 1px solid #757575;
 	padding:15px 0;
@@ -324,7 +325,7 @@ footer .widget .title{
 	font-size:1.6rem;
 	font-weight: normal;
 }
-footer .widget .title::before {
+footer .widget > .title::before {
     position: absolute;
     bottom: -1px;
     width: 130px;
@@ -379,6 +380,17 @@ footer .my_socialicons li a:hover{text-decoration:none}
 
 .topbar_right > div, .topbar_left > div{display:inline-block;overflow: visible;}
 #breadcrumbs{clear:both;margin:0}
+#breadcrumbs:after{
+	border-top: 8px solid #ecf0f1;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	content: "";
+	display: inline-block;
+	left: 10px;
+	position: absolute;
+	bottom: -8px;
+	z-index: 2
+}
 footer .widget{background:none;border:none}
 footer .widget .body{padding: 0;line-height: normal;border: none;}
 header .widget_user_avatar{
@@ -440,7 +452,7 @@ header .widget_user_avatar .user_info .avatar img{border-radius:50%}
 }
 
 #main_content h1 + .parent_title{
-    font-size:1.6rem;
+    font-size: 1.4rem;
     margin: -10px 0 20px 0;
 }
 main aside .menu, main aside .menu li,
@@ -543,6 +555,25 @@ aside .widget > .title{height:47px;line-height:47px}
 .widget_content_list.featured .item-first .info{position: absolute;bottom: 5px;padding: 10px;left: 0;right: 0;background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.48) 20%, rgba(0,0,0,0.69) 50%, rgba(0,0,0,0.95) 100%);background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.48) 20%,rgba(0,0,0,0.69) 50%,rgba(0,0,0,0.95) 100%);background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.48) 20%,rgba(0,0,0,0.69) 50%,rgba(0,0,0,0.95) 100%);}
 .widget_content_list.featured .item-first .details,.widget_content_list.featured .item-first .details a,.widget_content_list.featured .item-first .title a{color:#fff}
 .widget_content_list.featured .item-first .title{margin:0}
+.compact .item .image img{width:32px}
+.widget_content_list.featured .item .image img{width:64px}
+#album-photo-item .photo_author a{display:block}
+#album-photo-item .photo_author{height:32px}
+.inside .inside_wrap{min-height:280px}
+span.album_date:before,span.album_date:after,span.album_hits:after{content:none !important}
+.parent_title span.tags_bar{display:flex;margin: 25px 0 20px;clear: both;}
+.parent_title span.tags_bar a{margin-left:5px}
+.parent_title span.tags_bar a:first-child{margin-left:0}
+span.album_user{float:left;margin-right:10px}
+span.album_user img{border-radius:0}
+.parent_title a{display:block;text-decoration:none}
+.album_hits{font-size: 12px}
+.album_date{display: block;font-size: 12px;margin-top: 2px;float: left;margin-right: 10px}
+main aside .menu li:hover{z-index:102 !important}
+main aside .menu li:hover ul li{z-index:103 !important}
+.widget_content_filter .date-input, .widget_content_filter .input-small{width:90px!important}
+.widget_content_filter .date-input:first-child{margin-right:3px}
+#main_content > article{margin-bottom:10px}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
