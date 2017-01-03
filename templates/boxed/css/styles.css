@@ -216,7 +216,7 @@ header .menu > .folder > a > .wrap:after {content: "\f078";font: normal normal n
 header .menu > .folder > ul .folder > a:after,header .menu > .flexMenu-viewMore > ul .folder > a:after{content: "\f0da";font: normal normal normal 14px/1 FontAwesome;margin:13px 0 0;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;float: right;}
 header .menu ul ul{top:-1px}
 nav#main_menu .menu li ul li{background:#464646}
-nav#main_menu.menu_fix{position:fixed;left:0;top:0;z-index: 500;display: flex;}
+nav#main_menu.menu_fix{position:fixed;left:0;top:0;z-index:500;display:flex;padding-right:42px}
 nav#main_menu.menu_fix .menu{margin:auto}
 header .menu ul li a{height:40px;line-height:40px}
 header .menu ul li{border-color:rgba(0, 0, 0, 0.14)}
@@ -231,6 +231,10 @@ nav#main_menu .menu li:last-child ul li ul{
 
 nav#main_menu .menu li:last-child > ul li.folder > a:after{
     content: "\f0d9";
+    float: left;
+}
+nav#main_menu .menu li:last-child > ul li a{
+    text-align: right;
 }
 nav#main_menu{margin-bottom:0}
 nav select, .tabs-menu select{display:none !important}
@@ -259,6 +263,7 @@ aside{padding:15px;border-left: 1px solid #eee;margin-left: -1px;}
 #widget_pos_left-top .menu li.flexMenu-viewMore ul.flexMenu-popup,.tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{right:0;white-space:nowrap}
 #widget_pos_left-top .menu li.flexMenu-viewMore.flexMenu-allInPopup ul.flexMenu-popup{left:0;right:0}
 #widget_pos_left-top .menu li a{padding:10px 10px 10px 36px}
+#widget_pos_left-top .menu li a .counter{margin-left:5px;padding:2px 5px}
 .tabs-menu ul li.flexMenu-viewMore ul.flexMenu-popup{border: 1px solid #b3c2c9;margin-top:2px;border-top:none;border-bottom:none;z-index:2}
 .tabs-menu ul.tabbed li.flexMenu-viewMore.active li a{
     border: none;
@@ -453,7 +458,8 @@ header .widget_user_avatar .user_info .avatar img{border-radius:50%}
 
 #main_content h1 + .parent_title{
     font-size: 1.4rem;
-    margin: -10px 0 20px 0;
+    margin: -10px 0 10px 0;
+    min-height: 33px;
 }
 main aside .menu, main aside .menu li,
 main section .menu, main section .menu li
@@ -561,7 +567,7 @@ aside .widget > .title{height:47px;line-height:47px}
 #album-photo-item .photo_author{height:32px}
 .inside .inside_wrap{min-height:280px}
 span.album_date:before,span.album_date:after,span.album_hits:after{content:none !important}
-.parent_title span.tags_bar{display:flex;margin: 25px 0 20px;clear: both;}
+.parent_title span.tags_bar{display:flex;margin: 25px 0 10px;clear: both;}
 .parent_title span.tags_bar a{margin-left:5px}
 .parent_title span.tags_bar a:first-child{margin-left:0}
 span.album_user{float:left;margin-right:10px}
@@ -574,6 +580,93 @@ main aside .menu li:hover ul li{z-index:103 !important}
 .widget_content_filter .date-input, .widget_content_filter .input-small{width:90px!important}
 .widget_content_filter .date-input:first-child{margin-right:3px}
 #main_content > article{margin-bottom:10px}
+#controller_wrap .photo_filter{clear:both;margin-top:10px;}
+.widget_tags_cloud .tags_as_cloud li{margin:0}
+#layout footer .widget_tags_cloud ul li{height:auto;line-height: normal;margin: 0;padding: 0;}
+#layout footer .widget_tags_cloud ul.tags_as_list li{float:none;margin-bottom: 10px;padding-left: 20px}
+#layout .is_blocks .widget_tags_cloud .tags_as_cloud li a{display:block;background: #ededed;color: #7f8c8d;font-size:14px;padding:6px;margin:0 5px 5px 0;}
+#layout footer .is_blocks .widget_tags_cloud .tags_as_cloud li a{background: #444;color: #eee}
+#layout .is_blocks .widget_tags_cloud ul li:hover a,#layout .is_blocks .widget_tags_cloud ul.tags_as_list li:hover{text-decoration:none;color:#fff!important;text-shadow:2px 2px 3px #383838}
+
+#layout .is_blocks .widget_tags_cloud ul.tags_as_list li{float:left;margin: 0 5px 5px 0;padding: 0;position: relative;background: #ededed;color: #7f8c8d;}
+#layout .is_blocks .widget_tags_cloud ul.tags_as_list li a{
+    padding: 7px;
+    display: block;
+    float: left;
+    margin: 0;
+    border-right: 1px solid #ddd;
+    color: #7f8c8d;
+}
+#layout footer .is_blocks .widget_tags_cloud ul.tags_as_list li{background:#444;color:#bdc3c7}
+#layout footer .is_blocks .widget_tags_cloud ul.tags_as_list li a{border-right: 1px solid rgba(0, 0, 0, 0.24);color:#bdc3c7}
+#layout .is_blocks .widget_tags_cloud ul.tags_as_list li .counter{float:right;padding: 7px 10px;}
+.widget_tags_cloud{overflow:hidden}
+header .widget_user_avatar.menu_fix{position:fixed;z-index:501;width:42px}
+header .widget_user_avatar.menu_fix .user_info .name{display:none}
+header .widget_user_avatar.menu_fix .user_info{padding-right:5px}
+header .widget_user_avatar.menu_fix .user_info:after{content:none}
+
+
+#layout .boxed_comments_list .bcl_item{height:auto;line-height:normal;float: none;margin: 0 0 20px;padding:0;list-style:none}
+#layout .boxed_comments_list .bcl_item:last-child{margin: 0 0 10px}
+#layout .boxed_comments_list .bcl_item .bcl_text{
+    background: #eee;
+	color:#8e8e8e;
+    padding: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    margin: 0 0 13px
+}
+#layout footer .boxed_comments_list .bcl_item .bcl_text{background:#333}
+#layout footer .boxed_comments_list .bcl_item .bcl_text:after{border-top-color: #333}
+#layout .boxed_comments_list .bcl_item .bcl_text:after {
+    top: 100%;
+    left: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136,183,213,0);
+    border-top-color: #eee;
+    border-width: 5px;wi
+    margin-left: 0px
+}
+
+.bcl_item .bcl_user_avatar{float:left;margin-right:5px}
+.bcl_item .bcl_user_avatar img,.bcl_item .bcl_user_avatar .default_avatar{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 7px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+	width:32px
+}
+.bcl_item .bcl_target{
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 10px;
+}
+
+.bcl_clr {
+    clear: both;
+    height: 0;
+    line-height: 0;
+    display: block;
+    float: none;
+    padding: 0;
+    margin: 0;
+    border: none
+}
+.default_avatar.black_avatar_text:hover:after{background:transparent}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}

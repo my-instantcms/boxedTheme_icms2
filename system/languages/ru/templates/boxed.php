@@ -7,6 +7,7 @@
     define('LANG_BX_THEME_BG_COLOR',         'Цвет фона');
     define('LANG_BX_THEME_LOGO',         	 'Логотип');
     define('LANG_BX_THEME_MENU_FIX',         'Фиксировать основной меню');
+	define('LANG_BX_THEME_USERMENU_FIX', 	 'Так же фиксировать меню пользователя из header');
 
     define('LANG_BX_THEME_BG_REPEAT',        'Повторять фон');
     define('LANG_BX_THEME_BG_REPEAT_X',      'Только по горизонтали');

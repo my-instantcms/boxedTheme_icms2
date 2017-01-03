@@ -61,7 +61,9 @@ footer .widget .title::before,
 #layout .widget_tabbed > .tabs .links a,
 .widget_content_slider .items .item.active,
 a.menu_mobile,
-.topbar_right .wd_notices_icons li .wd_open_block .wd_ob_head
+.topbar_right .wd_notices_icons li .wd_open_block .wd_ob_head,
+#layout .is_blocks .widget_tags_cloud .tags_as_cloud li a:hover,
+#layout .is_blocks .widget_tags_cloud .tags_as_list li:hover
 {background:<?php echo $color; ?>}
 .topbar_right .menu li a:hover
 {color:<?php echo $color; ?>}

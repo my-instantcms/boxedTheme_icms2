@@ -3,10 +3,11 @@
 	define('LANG_BX_THEME_BG',               'Page background');
     define('LANG_BX_THEME_SITE',             'Site');
     define('LANG_BX_THEME_BG_IMAGE',         'Background image');
-    define('LANG_BX_THEME_BG_IMAGE_HINT', 	  'All other settings will take effect once an image is uploaded');
+    define('LANG_BX_THEME_BG_IMAGE_HINT', 	 'All other settings will take effect once an image is uploaded');
     define('LANG_BX_THEME_BG_COLOR',         'Background color');
-    define('LANG_BX_THEME_LOGO',         	  'Logo');
+    define('LANG_BX_THEME_LOGO',         	 'Logo');
 	define('LANG_BX_THEME_MENU_FIX',         'Fixed main menu');
+	define('LANG_BX_THEME_USERMENU_FIX', 	 'As well as fixing the user menu of the header');
 
     define('LANG_BX_THEME_BG_REPEAT',        'Repeat background image');
     define('LANG_BX_THEME_BG_REPEAT_X',      'Repeat horizontally');

@@ -88,6 +88,10 @@ class formBoxedTemplateOptions extends cmsForm {
                         'title' => LANG_BX_THEME_MENU_FIX
                     )),
 					
+					new fieldCheckbox('fix_usermenu', array(
+                        'title' => LANG_BX_THEME_USERMENU_FIX
+                    )),
+					
 					new fieldNumber('margin_top', array(
 						'title' => LANG_BX_THEME_TOP_MARGIN,
                         'default' => 0,

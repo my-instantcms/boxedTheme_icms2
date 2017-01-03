@@ -23,7 +23,7 @@ if($(window).width() <= 540){
 
 $(document).ready(function() {
 
-	$(".topbar_search_button").on("click", function(){$(".topbar_search").slideToggle();});
+	$(".topbar_search_button").on("click", function(){$(".topbar_search").slideToggle("slow", function(){$('.topbar_search input').focus();});});
 	$(".topbar_search_close").on("click", function(){$(".topbar_search").slideToggle();});
 	$(".footer_top").on("click", function(){$(".footer_top span").toggle();});
 	
