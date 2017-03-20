@@ -79,7 +79,7 @@ a:hover {
 	position:relative
 }
 main{padding:0 15px}
-#main_content *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+#main_content *,.nyroModalCont .pills-menu *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
 #main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *,.nyroModalCont *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 header .my_topbar .menu,
 .my_socialicons,
@@ -184,7 +184,7 @@ header .my_topbar .menu > li > a{display:block;height: 50px;line-height: 50px;pa
 	color:rgba(221, 221, 221, 0.69);
 	font-size: 70px;
 	position:absolute;
-	font-family:'FontAwesome';
+	font-family:'boxedFont';
 }
 .topbar_search_close{
 	top:0;
@@ -212,8 +212,8 @@ header .menu ul *.folder > a{
     background: none !important;
 }
 header .menu > li a:hover {background:rgba(0, 0, 0, 0.14)!important;}
-header .menu > .folder > a > .wrap:after {content: "\f078";font: normal normal normal 14px/1 FontAwesome;margin-left: 5px;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
-header .menu > .folder > ul .folder > a:after,header .menu > .flexMenu-viewMore > ul .folder > a:after{content: "\f0da";font: normal normal normal 14px/1 FontAwesome;margin:13px 0 0;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;float: right;}
+header .menu > .folder > a > .wrap:after,#main_menu .flexMenu-viewMore > a:after{content: "\f078";font: normal normal normal 14px/1 boxedFont;margin-left: 5px;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+header .menu > .folder > ul .folder > a:after,header .menu > .flexMenu-viewMore > ul .folder > a:after{content: "\f0da";font: normal normal normal 14px/1 boxedFont;margin:13px 0 0;display: inline-block;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;float: right;}
 header .menu ul ul{top:-1px}
 nav#main_menu .menu li ul li{background:#464646}
 nav#main_menu.menu_fix{position:fixed;left:0;top:0;z-index:500;display:flex;padding-right:42px}
@@ -396,7 +396,23 @@ footer .my_socialicons li a:hover{text-decoration:none}
 	bottom: -8px;
 	z-index: 2
 }
-footer .widget{background:none;border:none}
+footer .widget, footer .widget_tabbed{background:none;border:none}
+footer .widget_tabbed .tabs ul{
+    border: none;
+    background: transparent;
+}
+#layout footer .widget_tabbed .tabs ul li{
+    height: auto;
+    line-height: normal;
+    margin: 0;
+}
+#layout footer .widget_tabbed .tabs ul li.links{float:right;padding: 15px 0 0;}
+#layout footer .widget_tabbed .tabs ul li.links a{color: #fff;height: auto;line-height: normal;float: left;margin-right: 3px;}
+#layout footer .widget_tabbed .tabs ul li.links a:last-child{margin-right: 0;}
+#layout footer .widget_tabbed .tabs ul li a.active{
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
 footer .widget .body{padding: 0;line-height: normal;border: none;}
 header .widget_user_avatar{
     margin: 0;
@@ -461,6 +477,7 @@ header .widget_user_avatar .user_info .avatar img{border-radius:50%}
     margin: -10px 0 10px 0;
     min-height: 33px;
 }
+body #main_content .item_group_title{min-height:auto}
 main aside .menu, main aside .menu li,
 main section .menu, main section .menu li
 { margin:0; padding:0; list-style: none; background:#FFF; }
@@ -585,6 +602,7 @@ main aside .menu li:hover ul li{z-index:103 !important}
 #layout footer .widget_tags_cloud ul li{height:auto;line-height: normal;margin: 0;padding: 0;}
 #layout footer .widget_tags_cloud ul.tags_as_list li{float:none;margin-bottom: 10px;padding-left: 20px}
 #layout .is_blocks .widget_tags_cloud .tags_as_cloud li a{display:block;background: #ededed;color: #7f8c8d;font-size:14px;padding:6px;margin:0 5px 5px 0;}
+#layout .is_blocks .widget_tags_cloud .tags_as_cloud li{margin:0}
 #layout footer .is_blocks .widget_tags_cloud .tags_as_cloud li a{background: #444;color: #eee}
 #layout .is_blocks .widget_tags_cloud ul li:hover a,#layout .is_blocks .widget_tags_cloud ul.tags_as_list li:hover{text-decoration:none;color:#fff!important;text-shadow:2px 2px 3px #383838}
 
@@ -667,6 +685,54 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
     border: none
 }
 .default_avatar.black_avatar_text:hover:after{background:transparent}
+.topbar_search_form fieldset input[type="search"]:focus{outline:none}
+#layout .widget_tags_cloud .tags_as_cloud li{margin-right:5px}
+#layout .widget.fixed_actions_menu {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 0;
+    box-shadow: -4px 4px 5px #CCC;
+    background: #a7b4b7;
+}
+#layout .widget.fixed_actions_menu:before {
+    content: '';
+    width: 32px;
+    background:url("/templates/default/images/icons/menu.png") no-repeat center center;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+#layout .widget.fixed_actions_menu:hover .body, #layout .widget.fixed_actions_menu.clicked .body {
+    display: block;
+}
+#layout .widget.fixed_actions_menu .body {
+    display: none;
+    margin: 32px 0 0 0;
+    padding: 0;
+}
+#layout .widget.fixed_actions_menu .body .menu, #layout .widget.fixed_actions_menu .body .menu li{ margin:0; padding:0; list-style: none; background:#FFF; display: block; }
+#layout .widget.fixed_actions_menu .body .menu a,
+#layout .widget.fixed_actions_menu .body .menu span.item {
+    overflow: hidden;
+    display:block;
+    color:#666;
+    text-decoration: none;
+    padding:4px 10px;
+    padding-left:36px;
+}
+.fixed_actions_menu .menu a {
+    background: url("/templates/default/images/icons/item.png") no-repeat 10px center;
+}
+#layout .widget.fixed_actions_menu .body .menu li:hover{
+    position: relative;
+    z-index: 2;
+    cursor: default;
+    background: #ecf0f1;
+}
+.redactor-toolbar.toolbar-fixed-box{margin-top: 50px !important}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}

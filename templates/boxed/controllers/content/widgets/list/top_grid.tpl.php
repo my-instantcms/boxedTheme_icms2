@@ -89,7 +89,7 @@
                     <?php if ($is_first && $is_show_details) { ?>
                         <div class="wtg_details">
                             <span class="wtg_author">
-								<i class="fa fa-user-circle"></i> 
+								<i class="bx-user-circle"></i> 
                                 <a href="<?php echo href_to('users', $item['user']['id']); ?>" rel="author">
 									<?php html($item['user']['nickname']); ?>
 								</a>
@@ -99,11 +99,11 @@
                                 <?php } ?>
                             </span>
                             <span class="wtg_date">
-								<i class="fa fa-clock-o"></i> <?php html(string_date_age_max($item['date_pub'], true)); ?>
+								<i class="bx-clock-o"></i> <?php html(string_date_age_max($item['date_pub'], true)); ?>
                             </span>
                             <?php if($ctype['is_comments']){ ?>
                                 <span class="wtg_comments">
-									<i class="fa fa-comments"></i> 
+									<i class="bx-comments"></i> 
                                     <?php if ($url) { ?>
                                         <a href="<?php echo $url . '#comments'; ?>" title="<?php echo LANG_COMMENTS; ?>">
                                             <?php echo intval($item['comments']); ?>
@@ -113,12 +113,17 @@
                                     <?php } ?>
                                 </span>
                             <?php } ?>
+							<?php if($ctype['options']['hits_on']){ ?>
+                                <span class="wtg_views">
+									<i class="bx-eye"></i> <?php echo intval($item['hits_count']); ?>
+                                </span>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                     <?php if (!$is_first && $is_show_details) { ?>
                         <div class="wtg_details">
                             <span class="wtg_author">
-								<i class="fa fa-user-circle"></i> 
+								<i class="bx-user-circle"></i> 
                                 <a href="<?php echo href_to('users', $item['user']['id']); ?>" rel="author">
 									<?php html($item['user']['nickname']); ?>
 								</a>
@@ -128,11 +133,11 @@
                                 <?php } ?>
                             </span>
                             <span class="wtg_date">
-                                <i class="fa fa-clock-o"></i> <?php html(string_date_age_max($item['date_pub'], true)); ?>
+                                <i class="bx-clock-o"></i> <?php html(string_date_age_max($item['date_pub'], true)); ?>
                             </span>
                             <?php if($ctype['is_comments']){ ?>
                                 <span class="wtg_comments">
-									<i class="fa fa-comments"></i> 
+									<i class="bx-comments"></i> 
                                     <?php if ($url) { ?>
                                         <a href="<?php echo $url . '#comments'; ?>" title="<?php echo LANG_COMMENTS; ?>">
                                             <?php echo intval($item['comments']); ?>
@@ -140,6 +145,11 @@
                                     <?php } else { ?>
                                         <?php echo intval($item['comments']); ?>
                                     <?php } ?>
+                                </span>
+                            <?php } ?>
+							<?php if($ctype['options']['hits_on']){ ?>
+                                <span class="wtg_views">
+									<i class="bx-eye"></i> <?php echo intval($item['hits_count']); ?>
                                 </span>
                             <?php } ?>
                         </div>

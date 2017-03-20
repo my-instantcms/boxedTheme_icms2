@@ -1,3 +1,4 @@
+.widget > .body .wcl_top_grid{margin:-15px}
 .wcl_top_grid{position:relative;overflow: hidden;padding: 4px;}
 .widget .body .wtg_item{width:285px}
 .widget .body .wtg_first{width:580px}
@@ -83,6 +84,7 @@
     background: linear-gradient(20deg,#023c8c 0%,#ff86d3 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#023c8c', endColorstr='#ff86d3', GradientType=1)
 }
+.is_black .wcl_top_grid .wtg_item .wtg_image .wtg_image_a:last-child:before {background:rgba(0, 0, 0, 0.63) !important}
 
 .wcl_top_grid .wtg_image .wtg_image_a:last-child:after {
     -webkit-box-shadow: inset 0 0 16px 4px #000;
@@ -131,7 +133,7 @@
     line-height: 14px
 }
 .wtg_info .wtg_details, .wtg_info .wtg_details a{color:#fff}
-.wtg_info .wtg_details span{margin-right:5px}
+.wtg_info .wtg_details span{margin-right:5px;white-space:nowrap}
 .wtg_info .wtg_title{
     font-size: 16px;
     line-height: 21px;

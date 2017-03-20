@@ -19,7 +19,7 @@
 	<?php } ?>
     <?php
 		$this->addMainCSS("templates/{$this->name}/css/bootstrap.min.css");
-		$this->addMainCSS("templates/{$this->name}/css/font-awesome/css/font-awesome.min.css");
+		$this->addMainCSS("templates/{$this->name}/css/boxedFont/style.css");
 		$this->addMainCSS("templates/default/css/theme-text.css");
 		$this->addMainCSS("templates/default/css/theme-layout.css");
 		$this->addMainCSS("templates/default/css/theme-gui.css");
@@ -45,8 +45,12 @@
 	<link rel="canonical" href="<?php echo $config->host . $core->uri_absolute; ?>" itemprop="url" />
     <style><?php include('options.css.php'); ?></style>
     <?php if(!empty($this->options['fix_menu'])){ ?>
-	<?php $usr_fix = (!empty($this->options['fix_usermenu'])) ? ',header .widget_user_avatar' : ''; ?>
-	<script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu<?php html($usr_fix); ?>").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu<?php html($usr_fix); ?>").removeClass("menu_fix")})});</script><?php } ?>
+		<?php $usr_fix = (!empty($this->options['fix_usermenu'])) ? ',header .widget_user_avatar' : false; ?>
+		<script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu<?php html($usr_fix); ?>").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu<?php html($usr_fix); ?>").removeClass("menu_fix")})});</script>
+		<?php if(isset($this->options['margin_top']) && $this->options['margin_top'] > 0){ ?>
+			<style>header .widget_user_avatar.menu_fix{margin-top:-<?php html($this->options['margin_top']); ?>px}</style>
+		<?php } ?>
+	<?php } ?>
 </head>
 <body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?>">
 
@@ -68,25 +72,27 @@
 				</div>
 				
 			</div>
-			<div class="my_logobox">
-				<div class="row">
-					<div class="col-sm-4 my_logo">
-						<a href="<?php echo href_to_home(); ?>">
-							<img src="<?php html($logo); ?>" alt="<?php html($config->sitename); ?>">
-						</a>
-						<?php if(!$core->uri) { ?>
-							<h1 style="display:none"><?php $this->title(); ?></h1>
-						<?php } ?>
-					</div>
-					<div class="col-sm-8">
+			<?php if($this->hasWidgetsOn('topbar_banner') || !empty($this->options['logo'])) { ?>
+				<div class="my_logobox">
+					<div class="row">
+						<div class="col-sm-4 my_logo">
+							<a href="<?php echo href_to_home(); ?>">
+								<img src="<?php html($logo); ?>" alt="<?php html($config->sitename); ?>">
+							</a>
+							<?php if(!$core->uri) { ?>
+								<h1 style="display:none"><?php $this->title(); ?></h1>
+							<?php } ?>
+						</div>
 						<?php if($this->hasWidgetsOn('topbar_banner')) { ?>
-							<figure class="topbar_banner">
-								<?php $this->widgets('topbar_banner'); ?>
-							</figure>
+							<div class="col-sm-8">						
+								<figure class="topbar_banner">
+									<?php $this->widgets('topbar_banner'); ?>
+								</figure>						
+							</div>
 						<?php } ?>
 					</div>
 				</div>
-			</div>
+			<?php } ?>
 			<?php if($this->hasWidgetsOn('main_menu')) { ?>
 				<nav id="main_menu">
 					<?php $this->widgets('main_menu', false, 'wrapper_plain'); ?>
@@ -104,7 +110,7 @@
 		<?php
 			$is_sidebar = $this->hasWidgetsOn('right-top', 'right-center', 'right-bottom');
 			$is_footer = $this->hasWidgetsOn('footer1', 'footer2', 'footer3');
-			$section_class = $is_sidebar ? 'col-sm-8' : 'col-sm-12';
+			$section_class = $is_sidebar ? 'col-sm-8' : 'col-sm-12 is_not_sidebar';
 		?>
 		
 		<?php if($this->hasWidgetsOn('top')) { ?>

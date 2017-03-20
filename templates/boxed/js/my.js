@@ -16,8 +16,8 @@ if($(window).width() <= 768){
 }
 
 if($(window).width() <= 540){
-	$('.pagebar_nav .pagebar_page').html('<i class="fa fa-chevron-right"></i>');
-	$('.pagebar_nav .pagebar_page:first-child').html('<i class="fa fa-chevron-left"></i>');
+	$('.pagebar_nav .pagebar_page').html('<i class="bx-chevron-right"></i>');
+	$('.pagebar_nav .pagebar_page:first-child').html('<i class="bx-chevron-left"></i>');
 }
 
 
@@ -27,8 +27,8 @@ $(document).ready(function() {
 	$(".topbar_search_close").on("click", function(){$(".topbar_search").slideToggle();});
 	$(".footer_top").on("click", function(){$(".footer_top span").toggle();});
 	
-	$('#main_menu ul.menu, #widget_pos_left-top .menu, .tabs-menu > ul').flexMenu({'cutoff' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="fa fa-bars"></i> &nbsp; Меню действий'});
-	$('header .my_topbar .topbar_left > .menu, header .my_topbar .topbar_right > .menu').flexMenu({'cutoff' : 1, 'threshold' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="fa fa-bars"></i>'});
+	$('#main_menu ul.menu, #widget_pos_left-top .menu, .tabs-menu > ul, .content_datasets ul').flexMenu({'cutoff' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="bx-bars"></i> &nbsp; Меню действий'});
+	$('header .my_topbar .topbar_left > .menu, header .my_topbar .topbar_right > .menu').flexMenu({'cutoff' : 1, 'threshold' : 1, 'linkText' : 'Еще', 'linkTitle' : 'Еще', 'linkTextAll' : '<i class="bx-bars"></i>'});
 
 });
 
