@@ -108,6 +108,7 @@
 		<?php } ?>
 
 		<?php
+			$is_columns = $this->hasWidgetsOn('column1', 'column2', 'column3');
 			$is_sidebar = $this->hasWidgetsOn('right-top', 'right-center', 'right-bottom');
 			$is_footer = $this->hasWidgetsOn('footer1', 'footer2', 'footer3');
 			$section_class = $is_sidebar ? 'col-sm-8' : 'col-sm-12 is_not_sidebar';
@@ -116,6 +117,25 @@
 		<?php if($this->hasWidgetsOn('top')) { ?>
 			<div id="top_position">
 				<?php $this->widgets('top'); ?>
+			</div>
+		<?php } ?>
+		
+		<?php if($is_columns) { ?>
+			<?php 
+				$col_1 = $this->hasWidgetsOn('column3') ? 'col-md-3 col-sm-3' : 'col-md-6 col-sm-6';
+				$col_2 = $this->hasWidgetsOn('column1', 'column3') ? 'col-md-6 col-sm-6' : 'col-md-12 col-sm-12';
+				$col_3 = $this->hasWidgetsOn('column1') ? 'col-md-3 col-sm-3' : 'col-md-6 col-sm-6';
+			?>
+			<div class="is_three_columns">
+				<?php if($this->hasWidgetsOn('column1')) { ?>
+					<div class="<?php html($col_1); ?>"><?php $this->widgets('column1'); ?></div>
+				<?php } ?>
+				<?php if($this->hasWidgetsOn('column2')) { ?>
+					<div class="<?php html($col_2); ?>"><?php $this->widgets('column2'); ?></div>
+				<?php } ?>
+				<?php if($this->hasWidgetsOn('column3')) { ?>
+					<div class="<?php html($col_3); ?>"><?php $this->widgets('column3'); ?></div>
+				<?php } ?>
 			</div>
 		<?php } ?>
 		

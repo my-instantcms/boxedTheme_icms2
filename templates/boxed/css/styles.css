@@ -733,6 +733,10 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
     background: #ecf0f1;
 }
 .redactor-toolbar.toolbar-fixed-box{margin-top: 50px !important}
+.widget_content_list.featured .item-first .teaser{color:#eee;max-height:none !important}
+.widget_content_list.featured .item .teaser{max-height:40px}
+.is_three_columns{overflow:hidden;border-bottom:1px solid #eee}
+.is_three_columns .widget .title{font-size: 1.4rem}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
