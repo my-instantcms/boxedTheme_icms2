@@ -156,6 +156,7 @@
 #layout #menu_mobile .menu > .folder > a > .wrap:after{float:right;margin: -6px 10px;padding:13px;}
 #layout #menu_mobile .menu ul .folder > a:after{content:"\f0d7";float:right;margin:-6px 16px;padding:13px}
 body header .widget_user_avatar.menu_fix{position:relative;z-index:initial;width: auto}
+body #maps-map-block #map-canvas{height:240px !important}
 }
 
 @media (max-width:360px){

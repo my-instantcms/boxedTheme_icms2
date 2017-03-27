@@ -50,6 +50,7 @@
 		<?php if(isset($this->options['margin_top']) && $this->options['margin_top'] > 0){ ?>
 			<style>header .widget_user_avatar.menu_fix{margin-top:-<?php html($this->options['margin_top']); ?>px}</style>
 		<?php } ?>
+		<style>.redactor-toolbar.toolbar-fixed-box{margin-top: 50px !important}</style>
 	<?php } ?>
 </head>
 <body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?>">
@@ -249,7 +250,7 @@
 			<?php } ?>
 			<div class="my_copyrights">				
 				<p class="pull-left">
-					&copy; <?php echo $this->options['owner_year'] ? $this->options['owner_year'] : date('Y'); ?> 
+					&copy; <?php echo !empty($this->options['owner_year']) ? $this->options['owner_year'] : date('Y'); ?> 
 					<?php if(isset($this->options['owner_name']) && $this->options['owner_name']){ ?>
 						<a href="<?php echo $this->options['owner_url'] ? $this->options['owner_url'] : href_to_home(); ?>">
 							<?php html($this->options['owner_name']); ?>

@@ -80,7 +80,7 @@ a:hover {
 }
 main{padding:0 15px}
 #main_content *,.nyroModalCont .pills-menu *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
-#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *,.nyroModalCont *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#main_content textarea,#main_content input,#main_content select,#main_content .city-input,#main_content .album-photos-wrap *,#main_content dl *,#main_content .content_list.tiled .tile,.default_avatar *,.nyroModalCont *,#main_content .is_collapse{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 header .my_topbar .menu,
 .my_socialicons,
 .topbar_search_button{
@@ -732,11 +732,58 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
     cursor: default;
     background: #ecf0f1;
 }
-.redactor-toolbar.toolbar-fixed-box{margin-top: 50px !important}
 .widget_content_list.featured .item-first .teaser{color:#eee;max-height:none !important}
 .widget_content_list.featured .item .teaser{max-height:40px}
 .is_three_columns{overflow:hidden;border-bottom:1px solid #eee}
+.emojione{width:24px}
 .is_three_columns .widget .title{font-size: 1.4rem}
+.activity-list::before{z-index:0}
+[data-bx-tip] {
+ position:relative
+}
+[data-bx-tip]:before {
+	content: '';
+	display: none;
+	border: 5px solid #1a1a1a;
+	border-top-color: #1a1a1a;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	position: absolute;
+	top: -8px;
+	left: 8px;
+	z-index: 8;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+[data-bx-tip]:after {
+	display: none;
+	content: attr(data-bx-tip);
+	position: absolute;
+	top: -36px;
+	left: -5px;
+	padding: 0px 8px !important;
+	background: #1a1a1a;
+	color: #fff;
+	z-index: 9;
+	font-size: 13px;
+	height: 28px;
+	line-height: 28px;
+	white-space: nowrap;
+	word-wrap: normal;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	font-style:normal;
+}
+[data-bx-tip]:hover:before, [data-bx-tip]:hover:after {
+	display: block;
+}
 
 /*********************** FIX ADDONS ******************/
 #layout .userlang_swither .userlang_swither-toggle img,#layout .lang_switcher a img{margin-bottom:3px}
@@ -763,6 +810,12 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
 #layout .schedule .date td select{height:auto}
 #layout .day_list{width:360px}
 .wd_app_calendar .ui-datepicker{width:100%;box-shadow:none}
+#maps-marker-form #columns #map-canvas, #maps-marker-form #columns #city-selection, #maps-marker-form #columns #b-hours{width:520px}
+#maps-marker-form #columns #city-selection .search-form .input,#maps-marker-form #buttons .button-submit{margin-right:5px}
+
+/*********************** STYLES FOR FIREFOX ******************/
+
+@-moz-document url-prefix(){.maps-star-rating{display:inline;}}
 
 /*********************** FONT SIZES rem ******************/
 
@@ -770,7 +823,7 @@ aside .widget_tabbed > .tabs .links a{font-size:1rem}
 .content_item .info_bar, .content_list_item .info_bar,.is_online,#wall_widget #entries_list .entry .links a,.wd_slide_submit,.widget_content_list .details{font-size:1.1rem}
 nav, header .menu > li > a, .widget_user_avatar .user_info .name a,.widget_content_slider .items .item,aside .widget > .title,aside .widget_tabbed .tabs ul li a,#layout footer,.widget_search .input,#comments_widget .track,#comments_widget #comments_add_link a,.widget > .title .links a,#breadcrumbs ul li,.content_item .tags_bar, .content_list_item .tags_bar,.content_list.tiled .info_bar,.widget_content_filter .ft_date .value, .widget_content_filter .ft_number .value,#group_profile .block .details, #group_profile .block .details li,.pagebar,.pagebar_notice,#comments_list .comment .info div,form .hint,#user_profile .block .details, #user_profile .block .details li,#wall_widget #entries_list .entry .info div,header .menu ul li a, header .menu li.active ul li a,.widget_content_slider .slide .heading .teaser,.widget_tabbed > .tabs .links a,.top-rated-list .title{font-size:1.2rem}
 .widget_content_list.compact .item .title{font-size:1.3rem}
-.widget_tabbed .tabs ul li a,.content_datasets ul li,form .field label,#user_profile #information .fieldset_title h3,.widget_content_slider .slide .heading h2,.problem_sts li,.wd_app_container .wd_app_step,.tabs-menu .tabbed li,input.button-submit, input.button,.pills-menu-small li,.wd_app_button,.widget_content_list.featured .item .title,.widget_content_list.tiles-big .item .title{font-size:1.4rem}
+.widget_tabbed .tabs ul li a,.content_datasets ul li,form .field label,#user_profile #information .fieldset_title h3,.widget_content_slider .slide .heading h2,.problem_sts li,.wd_app_container .wd_app_step,.tabs-menu .tabbed li,input.button-submit, input.button,.pills-menu-small li,.wd_app_button,.widget_content_list.featured .item .title,.widget_content_list.tiles-big .item .title,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header{font-size:1.4rem}
 .content_list.table table td.ft_caption h2,.wd_app_result ul li,.widget_content_list .item .title,#horo_tabs p.horo_content{font-size:1.6rem}
 .content_categories li,.groups-list .title,.widget > .title{font-size:1.8rem}
 .content_list_item .ft_caption .value,#group_profile_title,#user_profile_title,#wd_appointments .wd_app_header h2,.widget_content_list.featured .item-first .title{font-size:2.1rem}
