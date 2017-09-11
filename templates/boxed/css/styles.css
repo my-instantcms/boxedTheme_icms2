@@ -16,6 +16,7 @@ body {
 }
 
 ul{margin:0;padding:0}
+.field ul{margin: 0 20px;}
 
 img {
 	height: auto;
@@ -479,21 +480,24 @@ header .widget_user_avatar .user_info .avatar img{border-radius:50%}
 }
 body #main_content .item_group_title{min-height:auto}
 main aside .menu, main aside .menu li,
-main section .menu, main section .menu li
+main section .menu, main section .menu li,
+.is_three_columns .menu, .is_three_columns .menu li
 { margin:0; padding:0; list-style: none; background:#FFF; }
 
 main aside .menu ul,
-main section .menu ul{
+main section .menu ul,
+.is_three_columns .menu ul
+{
     border: solid 1px #EDEDED;
     border-bottom: none;
 }
 
-main aside .menu {
+main aside .menu, .is_three_columns .menu{
     margin:-15px;
 	border-top:1px solid #ecf0f1
 }
 
-main aside .menu li ul {
+main aside .menu li ul, .is_three_columns .menu li ul{
     visibility: hidden;
     position:absolute;
     top:-1px;
@@ -504,12 +508,14 @@ main aside .menu li ul {
     z-index: 999;
 }
 
-main aside .menu li {
+main aside .menu li, .is_three_columns .menu li{
     border-bottom: solid 1px #ecf0f1;
 }
 
 main aside .menu li:hover,
 main aside .menu li.active,
+.is_three_columns .menu li:hover,
+.is_three_columns .menu li.active,
 main section .menu li:hover,
 main section .menu li.active {
     position: relative;
@@ -517,21 +523,25 @@ main section .menu li.active {
     cursor: default;
     background: #ecf0f1;
 }
-main aside .menu li:last-child {
+main aside .menu li:last-child, .is_three_columns .menu li:last-child{
     border-bottom: none;
 }
-main aside .menu li:hover > ul {
+main aside .menu li:hover > ul,
+.is_three_columns .menu li:hover > ul{
     visibility: visible;
 }
-aside .menu .item, section .menu .item {
+aside .menu .item, section .menu .item, .menu .item{
     background: url("/templates/default/images/icons/item.png") no-repeat 10px center;
 }
 main aside .menu li.active .item,
+.is_three_columns .menu li.active .item,
 main section .menu li.active .item {
     color:#000;
 }
 main aside .menu a,
 main aside .menu span.item,
+.is_three_columns .menu a,
+.is_three_columns .menu span.item,
 main section .menu a,
 main section .menu span.item {
     overflow: hidden;
@@ -542,11 +552,12 @@ main section .menu span.item {
     padding-left:36px;
 }
 
-main aside .menu a:hover {
+main aside .menu a:hover,.is_three_columns .menu a:hover{
     color:#000;
 }
 
 main aside .menu .counter,
+.is_three_columns .menu .counter,
 main section .menu .counter{
     float:right;
     padding: 0px 7px;
@@ -557,6 +568,7 @@ main section .menu .counter{
 }
 
 main aside .menu li:hover .counter,
+.is_three_columns .menu li:hover .counter,
 main section .menu li:hover .counter{
     background:#BDC3C7;
 }
@@ -734,7 +746,7 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
 }
 .widget_content_list.featured .item-first .teaser{color:#eee;max-height:none !important}
 .widget_content_list.featured .item .teaser{max-height:40px}
-.is_three_columns{overflow:hidden;border-bottom:1px solid #eee}
+.is_three_columns{overflow:hidden;border-bottom:1px solid #eee;float:left;width:100%;padding-top:10px}
 .emojione{width:24px}
 .is_three_columns .widget .title{font-size: 1.4rem}
 .activity-list::before{z-index:0}
@@ -815,7 +827,10 @@ header .widget_user_avatar.menu_fix .user_info:after{content:none}
 
 /*********************** STYLES FOR FIREFOX ******************/
 
-@-moz-document url-prefix(){.maps-star-rating{display:inline;}}
+@-moz-document url-prefix(){
+.maps-star-rating{display:inline;}
+.nyroModalLink .login_form h3{font-size:16px}
+}
 
 /*********************** FONT SIZES rem ******************/
 
@@ -823,12 +838,27 @@ aside .widget_tabbed > .tabs .links a{font-size:1rem}
 .content_item .info_bar, .content_list_item .info_bar,.is_online,#wall_widget #entries_list .entry .links a,.wd_slide_submit,.widget_content_list .details{font-size:1.1rem}
 nav, header .menu > li > a, .widget_user_avatar .user_info .name a,.widget_content_slider .items .item,aside .widget > .title,aside .widget_tabbed .tabs ul li a,#layout footer,.widget_search .input,#comments_widget .track,#comments_widget #comments_add_link a,.widget > .title .links a,#breadcrumbs ul li,.content_item .tags_bar, .content_list_item .tags_bar,.content_list.tiled .info_bar,.widget_content_filter .ft_date .value, .widget_content_filter .ft_number .value,#group_profile .block .details, #group_profile .block .details li,.pagebar,.pagebar_notice,#comments_list .comment .info div,form .hint,#user_profile .block .details, #user_profile .block .details li,#wall_widget #entries_list .entry .info div,header .menu ul li a, header .menu li.active ul li a,.widget_content_slider .slide .heading .teaser,.widget_tabbed > .tabs .links a,.top-rated-list .title{font-size:1.2rem}
 .widget_content_list.compact .item .title{font-size:1.3rem}
-.widget_tabbed .tabs ul li a,.content_datasets ul li,form .field label,#user_profile #information .fieldset_title h3,.widget_content_slider .slide .heading h2,.problem_sts li,.wd_app_container .wd_app_step,.tabs-menu .tabbed li,input.button-submit, input.button,.pills-menu-small li,.wd_app_button,.widget_content_list.featured .item .title,.widget_content_list.tiles-big .item .title,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header{font-size:1.4rem}
+.widget_tabbed .tabs ul li a,.content_datasets ul li,form .field label,#user_profile #information .fieldset_title h3,.widget_content_slider .slide .heading h2,.problem_sts li,.wd_app_container .wd_app_step,.tabs-menu .tabbed li,input.button-submit, input.button,.pills-menu-small li,.wd_app_button,.widget_content_list.featured .item .title,.widget_content_list.tiles-big .item .title,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header,.is_three_columns .widget .title,.forum_rss_icon a,.category-table-header,.category-ceil a,.category-as-folder,.threads-list-header, .groups-list .f_description .value{font-size:1.4rem}
 .content_list.table table td.ft_caption h2,.wd_app_result ul li,.widget_content_list .item .title,#horo_tabs p.horo_content{font-size:1.6rem}
 .content_categories li,.groups-list .title,.widget > .title{font-size:1.8rem}
 .content_list_item .ft_caption .value,#group_profile_title,#user_profile_title,#wd_appointments .wd_app_header h2,.widget_content_list.featured .item-first .title{font-size:2.1rem}
 .content_list.featured .first .ft_caption a{font-size:2.4rem}
 h1{font-size:2.8rem}
+#main_content .controller_actions_menu ul.menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    right: 0;
+    border: 1px solid #dfe6ed;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+#main_content .controller_actions_menu ul.menu li {padding: 3px 0;line-height: 100%}
+#main_content .controller_actions_menu > input:checked + label + ul.menu {display: block}
+#main_content section .list_actions_menu .menu a {padding: 4px 10px}
+
+.content_list.table table td.photo a{overflow:hidden}
 
 /*********************** COLORS ******************/
 #layout .widget .bg_black {background:#000}

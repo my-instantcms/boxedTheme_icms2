@@ -57,6 +57,7 @@
     main .widget_user_avatar .menu .folder:hover,.widget_user_avatar .menu li ul li:hover{
         background: transparent !important;
     }
+	#layout .is_three_columns{float:none}
 }
 @media (max-width:640px){
 	#controller_wrap .photo_filter{height:auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;overflow:visible}
@@ -105,14 +106,15 @@
 }
 
 #layout #menu_mobile > ul ul.is_mi_open {
-  margin: 0;
-  max-height: 55em;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  visibility: visible;
-  background:rgba(0, 0, 0, 0.25);
-  left:0
+	margin: 0;
+	max-height: 55em;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	visibility: visible;
+	background:rgba(0, 0, 0, 0.25);
+	left:0;
+	top: 0;
 }
 
 #layout #menu_mobile ul ul.is_mi_open ul{background: rgba(0, 0, 0, 0.15);}

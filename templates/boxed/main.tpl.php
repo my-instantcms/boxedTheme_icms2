@@ -36,10 +36,11 @@
 		}
 	?>
     <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
     <![endif]-->
     <?php $this->head(); ?>
+	<meta name="csrf-token" content="<?php echo cmsForm::getCSRFToken(); ?>" />
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
 	<link rel="canonical" href="<?php echo $config->host . $core->uri_absolute; ?>" itemprop="url" />
@@ -200,17 +201,8 @@
 		<?php } ?>
 
         <?php if ($config->debug && cmsUser::isAdmin()){ ?>
-            <div id="sql_debug" style="display:none">
-                <div id="sql_queries">
-                    <div id="sql_stat"><?php echo $core->db->getStat(); ?></div>
-                    <?php foreach($core->db->query_list as $sql) { ?>
-                        <div class="query">
-                            <div class="src"><?php echo $sql['src']; ?></div>
-                            <?php echo nl2br(htmlspecialchars($sql['sql'])); ?>
-                            <div class="query_time"><?php echo LANG_DEBUG_QUERY_TIME; ?> <span class="<?php echo (($sql['time']>=0.1) ? 'red_query' : 'green_query'); ?>"><?php echo number_format($sql['time'], 5); ?></span> <?php echo LANG_SECOND10 ?></div>
-                        </div>
-                    <?php } ?>
-                </div>
+            <div id="debug_block">
+                <?php $this->renderAsset('ui/debug', array('core' => $core)); ?>
             </div>
         <?php } ?>
 		
@@ -259,22 +251,14 @@
 						<?php echo LANG_POWERED_BY_INSTANTCMS; ?>
 					<?php } ?>
 					<?php if ($config->debug && cmsUser::isAdmin()){ ?>
-						&nbsp;
-						<span class="item">
-                            SQL: <a href="#sql_debug" title="SQL dump" class="ajax-modal">
-								<?php echo $core->db->query_count; ?>
-							</a>
-                        </span>
-                        <?php if ($config->cache_enabled){ ?>
-                            <span class="item">
-                                Cache: <a href="<?php echo href_to('admin', 'cache_delete', $config->cache_method);?>" title="Clear cache"><?php echo cmsCache::getInstance()->query_count; ?></a>
-                            </span>
-                        <?php } ?>
                         <span class="item">
-                            Mem: <?php echo round(memory_get_usage()/1024/1024, 2); ?> Mb
+                            <a href="#debug_block" title="<?php echo LANG_DEBUG; ?>" class="ajax-modal"><?php echo LANG_DEBUG; ?></a>
                         </span>
                         <span class="item">
-                            Time: <?php echo number_format(cmsCore::getTime(), 4); ?> s
+                            Time: <?php echo cmsDebugging::getTime('cms', 4); ?> s
+                        </span>
+                        <span class="item">
+                            Mem: <?php echo round(memory_get_usage(true)/1024/1024, 2); ?> Mb
                         </span>
                     <?php } ?>
 				</p>
