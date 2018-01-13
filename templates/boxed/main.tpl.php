@@ -59,7 +59,13 @@
     <div id="layout">
 
         <?php if (!$config->is_site_on){ ?>
-            <div id="site_off_notice"><?php printf(ERR_SITE_OFFLINE_FULL, href_to('admin', 'settings', 'siteon')); ?></div>
+            <div id="site_off_notice">
+                <?php if (cmsUser::isAdmin()){ ?>
+                    <?php printf(ERR_SITE_OFFLINE_FULL, href_to('admin', 'settings', 'siteon')); ?>
+                <?php } else { ?>
+                    <?php echo ERR_SITE_OFFLINE; ?>
+                <?php } ?>
+            </div>
         <?php } ?>
 		
 		<header>
@@ -155,19 +161,14 @@
 				<section class="<?php html($section_class); ?>" id="main_content">
 				
 					<?php
-						$messages = cmsUser::getSessionMessages();
-						if ($messages){
-							?>
-							<div class="sess_messages">
-								<?php
-									foreach($messages as $message){
-										echo $message;
-									}
-								?>
-							</div>
-							<?php
-						}
-					?>
+					$messages = cmsUser::getSessionMessages();
+					if ($messages){ ?>
+						<div class="sess_messages">
+							<?php foreach($messages as $message){ ?>
+								<div class="<?php echo $message['class']; ?>"><?php echo $message['text']; ?></div>
+							 <?php } ?>
+						</div>
+					<?php } ?>
 					<?php if($this->hasWidgetsOn('left-top')) { ?>
 						<div id="widget_pos_left-top"><?php $this->widgets('left-top'); ?></div>
 					<?php } ?>
