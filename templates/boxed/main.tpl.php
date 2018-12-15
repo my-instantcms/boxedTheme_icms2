@@ -22,7 +22,7 @@
 	<?php } ?>
     <?php
 		$this->addMainCSS("templates/{$this->name}/css/bootstrap.min.css");
-		$this->addMainCSS("templates/{$this->name}/css/boxedFont/style.css");
+		$this->addMainCSS("templates/{$this->name}/css/boxedFont/style.css", false);
 		$this->addMainCSS("templates/default/css/theme-text.css");
 		$this->addMainCSS("templates/default/css/theme-layout.css");
 		$this->addMainCSS("templates/default/css/theme-gui.css");
@@ -46,8 +46,8 @@
     <![endif]-->
     <?php $this->head(); ?>
 	<meta name="csrf-token" content="<?php echo cmsForm::getCSRFToken(); ?>" />
-	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css?ver=106">
-	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css?<?php html($config->production_time); ?>">
+	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css?<?php html($config->production_time); ?>">
 	<link rel="canonical" href="<?php echo $config->host . $core->uri_absolute; ?>" itemprop="url" />
     <style><?php include('options.css.php'); ?></style>
     <?php if(!empty($this->options['fix_menu'])){ ?>
@@ -287,8 +287,8 @@
 		</footer>
 
     </div>
-	<script src="/templates/<?php html($this->name); ?>/js/flexmenu.min.js"></script>
-	<script src="/templates/default/js/jquery-cookie.js"></script>
-	<script src="/templates/<?php html($this->name); ?>/js/my.js"></script>
+	<script src="/templates/<?php html($this->name); ?>/js/flexmenu.min.js?<?php html($config->production_time); ?>"></script>
+	<script src="/templates/default/js/jquery-cookie.js?<?php html($config->production_time); ?>"></script>
+	<script src="/templates/<?php html($this->name); ?>/js/my.js?<?php html($config->production_time); ?>"></script>
 </body>
 </html>
