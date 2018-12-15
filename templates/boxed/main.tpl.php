@@ -52,7 +52,9 @@
     <style><?php include('options.css.php'); ?></style>
     <?php if(!empty($this->options['fix_menu'])){ ?>
 		<?php $usr_fix = (!empty($this->options['fix_usermenu'])) ? ',header .widget_user_avatar' : false; ?>
-		<script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu<?php html($usr_fix); ?>").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu<?php html($usr_fix); ?>").removeClass("menu_fix")})});</script>
+		<script>$(function(){var n=$("nav#main_menu").length?$("nav#main_menu").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$("nav#main_menu<?php html($usr_fix); ?>").addClass("menu_fix"),$(window).scrollTop()<n.top&&$("nav#main_menu<?php html($usr_fix); ?>").removeClass("menu_fix")});
+		var n=$(".menu_mobile").length?$(".menu_mobile").offset():!1;n&&$(window).scroll(function(){$(window).scrollTop()>n.top&&$(".menu_mobile,.sc_style_icon").addClass("menu_fix"),$(window).scrollTop()<n.top&&$(".menu_mobile,.sc_style_icon").removeClass("menu_fix")});
+		});</script>
 		<?php if(isset($this->options['margin_top']) && $this->options['margin_top'] > 0){ ?>
 			<style>header .widget_user_avatar.menu_fix{margin-top:-<?php html($this->options['margin_top']); ?>px}</style>
 		<?php } ?>
