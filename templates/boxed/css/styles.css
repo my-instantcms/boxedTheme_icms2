@@ -8,6 +8,12 @@ html,
 body {
 	position: relative;
 	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none
 }
 body {
 	font:400 1.4rem/2rem Arial, Helvetica, sans-serif !important;
@@ -200,7 +206,7 @@ header .my_topbar .menu > li > a{display:block;height: 50px;line-height: 50px;pa
 	background:#272727;
 }
 nav .menu{display:block}
-nav .menu ul{list-style:none;box-shadow:none}
+nav .menu ul{list-style:none;box-shadow:none;}
 header .menu > .folder > a > .wrap {
     padding-right: 0;
     background: none !important;
@@ -859,6 +865,7 @@ h1{font-size:2.8rem}
 #main_content section .list_actions_menu .menu a {padding: 4px 10px}
 
 .content_list.table table td.photo a{overflow:hidden}
+#layout footer a{background:none}
 
 /*********************** COLORS ******************/
 #layout .widget .bg_black {background:#000}
@@ -867,3 +874,51 @@ h1{font-size:2.8rem}
 #layout .widget .bg_green {background:#3cb371}
 
 #layout .widget .txt_white, #layout .widget .txt_white a{color:#fff}
+
+.hc-offcanvas-nav{padding:0}
+.hc-offcanvas-nav ul{
+    float: none;
+    height: auto;
+    line-height: normal;
+	position: static;
+}
+.hc-offcanvas-nav ul li{float: none}
+.hc-offcanvas-nav .menu > .folder > a > .wrap{background: none !important;padding: 0}
+.hc-offcanvas-nav ul li.nav-close{float: none}
+.hc-offcanvas-nav ul li a, .hc-offcanvas-nav ul li .nav-item{
+    padding: 14px 17px;
+    color: #fff;
+    background: rgba(0,0,0,0) !important;
+    border-bottom: 1px solid #2c5d8f;
+    text-transform: none;
+    font-weight: normal;
+}
+.hc-offcanvas-nav:not(.touch-device) a:hover {background: #31679e !important}
+.hc-offcanvas-nav li.nav-close a, .hc-offcanvas-nav li.nav-back a{background: #2c5d8f !important}
+.hc-offcanvas-nav li.nav-close a:hover, .hc-offcanvas-nav li.nav-back a:hover {background: #2b5c8d !important}
+.hc-offcanvas-nav li.nav-close span::before, .hc-offcanvas-nav li.nav-close span::after{
+	width: 8px;
+    height: 8px;
+    margin-top: -5px;
+}
+.hc-offcanvas-nav ul ul{
+    width: auto;
+    position: static;
+    visibility: visible;
+    margin: 0;
+}
+.hc-offcanvas-nav ul ul li{
+    background: none;
+    border: navajowhite;
+    color: #fff;
+}
+.hc-offcanvas-nav ul ul li a{
+    height: auto;
+    line-height: normal;
+    overflow: auto;
+    padding: 14px 17px;
+    color: #fff;
+    background: rgba(0,0,0,0) !important;
+    border-bottom: 1px solid #2c5d8f;
+}
+#c_sitename, #c_sitedesc {display: none;}

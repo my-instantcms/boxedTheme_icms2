@@ -84,11 +84,13 @@
 	#controller_wrap .spoil .sp_button{width:16px}
 	#layout header .widget_user_avatar .menu li ul{right: auto;left: 150px;}
 	a.menu_mobile {
-	  color: #fff;
-	  display: block !important;
-	  text-decoration: none;
-	  padding: 12px;
-	  font-size: 20px;
+		color: #fff;
+		display: block !important;
+		text-decoration: none;
+		padding: 12px;
+		font-size: 20px;
+		position: static;
+		width: auto;
 	}
 	
 #layout #main_menu, #layout #menu_mobile > ul, #layout #menu_mobile > ul ul {
@@ -163,4 +165,5 @@ body #maps-map-block #map-canvas{height:240px !important}
 
 @media (max-width:360px){
 	input.button.button-cancel{margin-top:5px}
+	#layout .vi_images{display:none}
 }

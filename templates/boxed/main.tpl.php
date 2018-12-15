@@ -6,13 +6,16 @@
 		$logo = '/templates/default/images/logo.png';
 	}
 	$left_sidebar = (isset($this->options['aside_pos']) && $this->options['aside_pos'] == 'left') ? 'is_sidebar_left' : false;
+	$vi_font = cmsUser::hasCookie('vi_font') ? cmsUser::getCookie('vi_font') : false;
+	$vi_class = cmsUser::hasCookie('vi_class') ? cmsUser::getCookie('vi_class') : false;
 ?>
 <!DOCTYPE html>
-<html lang="ru" prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/ article: http://ogp.me/ns/article#  profile: http://ogp.me/ns/profile#">
-<head>
-    <title><?php $this->title(); ?></title>
+<html lang="ru" prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video# ya: http://webmaster.yandex.ru/vocabularies/ article: http://ogp.me/ns/article#  profile: http://ogp.me/ns/profile#" <?php if ($vi_font){ ?>style="font-size:<?php html($vi_font); ?>px" data-fsize="<?php html($vi_font); ?>"<?php } ?>>
+<head itemscope itemtype="http://schema.org/WebSite">
+    <title itemprop='name'><?php $this->title(); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php if(isset($this->options['favicon']['original']) && $this->options['favicon']['original']){ ?>
 		<?php $favicon = $config->upload_root . $this->options['favicon']['original']; ?>
 		<link rel="shortcut icon" href="<?php echo $favicon; ?>" type="image/x-icon">
@@ -26,7 +29,7 @@
 		$this->addMainCSS("templates/default/css/theme-widgets.css");
 		$this->addMainCSS("templates/default/css/theme-content.css");
 		$this->addMainCSS("templates/default/css/theme-modal.css");
-		$this->addMainCSS("templates/{$this->name}/css/responsive.css");
+		$this->addMainCSS("templates/{$this->name}/css/responsive.css?ver=106");
 		$this->addMainJS("templates/default/js/jquery.js");
 		$this->addMainJS("templates/default/js/jquery-modal.js");
 		$this->addMainJS("templates/default/js/core.js");
@@ -34,6 +37,8 @@
 		if (cmsUser::isLogged()){
 			$this->addMainJS("templates/default/js/messages.js");
 		}
+		$this->addMainJS('templates/boxed/js/hc-offcanvas-nav.js', false);
+		$this->addMainCSS('templates/boxed/css/hc-offcanvas-nav.css', false);
 	?>
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
@@ -41,7 +46,7 @@
     <![endif]-->
     <?php $this->head(); ?>
 	<meta name="csrf-token" content="<?php echo cmsForm::getCSRFToken(); ?>" />
-	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css?ver=106">
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/my.css">
 	<link rel="canonical" href="<?php echo $config->host . $core->uri_absolute; ?>" itemprop="url" />
     <style><?php include('options.css.php'); ?></style>
@@ -53,8 +58,15 @@
 		<?php } ?>
 		<style>.redactor-toolbar.toolbar-fixed-box{margin-top: 50px !important}</style>
 	<?php } ?>
+	<?php if (!$this->isBody()){ ?>
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="<?php html($config->host); ?>" >
+		<meta property="og:title" content="<?php $this->title(); ?>" >
+		<meta property="og:description" content="<?php echo $this->metadesc; ?>" >
+		<meta property="og:image" content="<?php html($logo); ?>" >
+	<?php } ?>
 </head>
-<body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?>">
+<body id="<?php echo $device_type; ?>_device_type" class="<?php html($left_sidebar); ?> <?php echo $vi_class ? $vi_class : ''; ?>" itemscope itemtype="http://schema.org/WebPage">
 
     <div id="layout">
 
@@ -68,7 +80,7 @@
             </div>
         <?php } ?>
 		
-		<header>
+		<header itemscope itemtype="http://schema.org/WPHeader">
 			<div class="my_topbar">
 				<?php if($this->hasWidgetsOn('topbar_left')) { ?>
 					<div class="topbar_left">
@@ -87,9 +99,12 @@
 							<a href="<?php echo href_to_home(); ?>">
 								<img src="<?php html($logo); ?>" alt="<?php html($config->sitename); ?>">
 							</a>
-							<?php if(!$core->uri) { ?>
-								<h1 style="display:none"><?php $this->title(); ?></h1>
+							<?php if($core->uri) { ?>
+								<p id="c_sitename" itemprop="name"><?php $this->title(); ?></p>
+							<?php } else { ?>
+								<h1 style="display:none" itemprop="name"><?php $this->title(); ?></h1>
 							<?php } ?>
+							<p id="c_sitedesc" itemprop="description"><?php echo $this->metadesc; ?></p>
 						</div>
 						<?php if($this->hasWidgetsOn('topbar_banner')) { ?>
 							<div class="col-sm-8">						
@@ -151,18 +166,21 @@
 			<div class="row" style="background:#f9f9f9">
 			
 				<?php if ($is_sidebar && $left_sidebar) { ?>
-					<aside class="col-sm-4">
+					<aside class="col-sm-4" itemscope itemtype="http://schema.org/WPSideBar">
 						<div id="widget_pos_right-top"><?php $this->widgets('right-top'); ?></div>
 						<div id="widget_pos_right-center"><?php $this->widgets('right-center'); ?></div>
 						<div id="widget_pos_right-bottom"><?php $this->widgets('right-bottom'); ?></div>
 					</aside>
 				<?php } ?>
-			
-				<section class="<?php html($section_class); ?>" id="main_content">
 				
-					<?php
+				<?php 
 					$messages = cmsUser::getSessionMessages();
-					if ($messages){ ?>
+					$show_mc = ($messages || $this->isBody() || $this->hasWidgetsOn('left-top') || $this->hasWidgetsOn('left-bottom'));
+				?>
+				
+				<section class="<?php html($section_class); ?>" <?php if ($show_mc){ ?>id="main_content"<?php } ?>>
+				
+					<?php if ($messages){ ?>
 						<div class="sess_messages">
 							<?php foreach($messages as $message){ ?>
 								<div class="<?php echo $message['class']; ?>"><?php echo $message['text']; ?></div>
@@ -175,7 +193,10 @@
 				
 					<?php if ($this->isBody()){ ?>
 						<article>
-							<div id="controller_wrap"><?php $this->body(); ?></div>
+							<div id="controller_wrap">
+								<?php $this->block('before_body'); ?>
+								<?php $this->body(); ?>
+							</div>
 						</article>
 					<?php } ?>
 					<?php if($this->hasWidgetsOn('left-bottom')) { ?>
@@ -185,7 +206,7 @@
 				</section>
 				
 				<?php if($is_sidebar && !$left_sidebar){ ?>
-					<aside class="col-sm-4">
+					<aside class="col-sm-4" itemscope itemtype="http://schema.org/WPSideBar">
 						<div id="widget_pos_right-top"><?php $this->widgets('right-top'); ?></div>
 						<div id="widget_pos_right-center"><?php $this->widgets('right-center'); ?></div>
 						<div id="widget_pos_right-bottom"><?php $this->widgets('right-bottom'); ?></div>
@@ -207,7 +228,7 @@
             </div>
         <?php } ?>
 		
-		<footer>
+		<footer itemscope="" itemtype="http://schema.org/WPFooter">
 			<div class="row footer_top">
 				<?php if(isset($this->options['hide_text']) && $this->options['hide_text']){ ?>
 					<span><?php html($this->options['hide_text']); ?></span>
@@ -245,11 +266,9 @@
 				<p class="pull-left">
 					&copy; <?php echo !empty($this->options['owner_year']) ? $this->options['owner_year'] : date('Y'); ?> 
 					<?php if(isset($this->options['owner_name']) && $this->options['owner_name']){ ?>
-						<a href="<?php echo $this->options['owner_url'] ? $this->options['owner_url'] : href_to_home(); ?>">
-							<?php html($this->options['owner_name']); ?>
-						</a>
+						<a href="<?php echo $this->options['owner_url'] ? $this->options['owner_url'] : href_to_home(); ?>"  itemprop="copyrightHolder"><?php html($this->options['owner_name']); ?></a>
 					<?php } else { ?>
-						<?php echo LANG_POWERED_BY_INSTANTCMS; ?>
+						<!--noindex--><?php echo LANG_POWERED_BY_INSTANTCMS; ?><!--/noindex-->
 					<?php } ?>
 					<?php if ($config->debug && cmsUser::isAdmin()){ ?>
                         <span class="item">
@@ -269,6 +288,7 @@
 
     </div>
 	<script src="/templates/<?php html($this->name); ?>/js/flexmenu.min.js"></script>
+	<script src="/templates/default/js/jquery-cookie.js"></script>
 	<script src="/templates/<?php html($this->name); ?>/js/my.js"></script>
 </body>
 </html>
