@@ -63,7 +63,10 @@ footer .widget .title::before,
 a.menu_mobile,
 .topbar_right .wd_notices_icons li .wd_open_block .wd_ob_head,
 #layout .is_blocks .widget_tags_cloud .tags_as_cloud li a:hover,
-#layout .is_blocks .widget_tags_cloud .tags_as_list li:hover
+#layout .is_blocks .widget_tags_cloud .tags_as_list li:hover,
+.hc-offcanvas-nav .nav-container,
+.hc-offcanvas-nav .nav-wrapper,
+.hc-offcanvas-nav ul
 {background:<?php echo $color; ?>}
 .topbar_right .menu li a:hover
 {color:<?php echo $color; ?>}
