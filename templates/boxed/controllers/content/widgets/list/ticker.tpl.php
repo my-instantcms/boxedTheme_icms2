@@ -4,7 +4,7 @@
 		<i class="bx-bullhorn"></i>
 		<ul class="newsticker-list">
 			<?php foreach($items as $item) { ?>
-				<?php $url = href_to($ctype['name'], $item['slug']) . '.html'; ?>
+				<?php $url = href_to($ctype['name'], $item['slug'] . '.html'); ?>
 				<li class="newsticker-item">
 					<a href="<?php echo $url; ?>">
 						<?php html(mb_strimwidth($item['title'], 0, $teaser_len ? $teaser_len : 50, "...")); ?>

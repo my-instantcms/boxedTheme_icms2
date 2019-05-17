@@ -907,7 +907,9 @@ h1{font-size:2.8rem}
 .hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-2 > .nav-content > ul,
 .hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-3 > .nav-content > ul,
 .hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-4 > .nav-content > ul,
-.hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-5 > .nav-content > ul{
+.hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-5 > .nav-content > ul,
+.hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-6 > .nav-content > ul,
+.hc-offcanvas-nav ul .level-open .level-open .nav-wrapper-7 > .nav-content > ul{
     width: auto;
     position: static;
     visibility: visible;

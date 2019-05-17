@@ -37,13 +37,12 @@
 		if (cmsUser::isLogged()){
 			$this->addMainJS("templates/default/js/messages.js");
 		}
+		if ($config->debug && cmsUser::isAdmin()){
+			$this->addMainCSS("templates/default/css/debug.css");
+		}
 		$this->addMainJS('templates/boxed/js/hc-offcanvas-nav.js', false);
 		$this->addMainCSS('templates/boxed/css/hc-offcanvas-nav.css', false);
 	?>
-    <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
-    <![endif]-->
     <?php $this->head(); ?>
 	<meta name="csrf-token" content="<?php echo cmsForm::getCSRFToken(); ?>" />
 	<link rel="stylesheet" type="text/css" href="/templates/<?php html($this->name); ?>/css/styles.css?<?php html($config->production_time); ?>">
@@ -289,6 +288,7 @@
 		</footer>
 
     </div>
+	<?php if (method_exists($this, 'bottom')) { $this->bottom(); } ?>
 	<script src="/templates/<?php html($this->name); ?>/js/flexmenu.min.js?<?php html($config->production_time); ?>"></script>
 	<script src="/templates/default/js/jquery-cookie.js?<?php html($config->production_time); ?>"></script>
 	<script src="/templates/<?php html($this->name); ?>/js/my.js?<?php html($config->production_time); ?>"></script>
